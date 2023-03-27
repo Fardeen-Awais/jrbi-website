@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { styles } from '@/styles/styles' // styles.paddingX idhar sai ai hai
 import Navbar from '@/components/Navbar'
-
+import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
@@ -13,9 +13,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h2 className={`bg-yellow-400 text-teal-800 text-3xl ${styles.paddingX}`}>Hi Iqra let's get started, Don't overthink about folder most of them i created. Yay aik component ka demo lo </h2>
-
-        <div><Navbar/></div>
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center z-0">
+        <Navbar/>
+        <Hero/>
+      </div>
       </main>
     </>
   )

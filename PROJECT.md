@@ -1,12 +1,12 @@
-- Assets Collection []
-- Setup tailwind Plugin []
-- UI design implementation []
+- Assets Collection [x]
+- Setup tailwind Plugin [...pending]
+- UI design implementation [x]
 
 
-- Responsive navbar[]
-  - logo []
-  - PageNavigator []
-  - Login/ Logout -[]
+- Responsive navbar[x]
+  - logo [x]
+  - PageNavigator [x]
+  - Login/ Logout -[x]
 
 - Hero - []
  - Includes brief intro
