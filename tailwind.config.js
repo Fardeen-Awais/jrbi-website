@@ -30,7 +30,7 @@ module.exports = {
         xs: "300px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        "hero-pattern": "url('/circuit-board.svg')",
       },
     },
   },

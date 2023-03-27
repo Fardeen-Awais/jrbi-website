@@ -14,14 +14,14 @@ function Navbar() {
 
   return (
     <>
-      <header className="text-gray-900 ">
+      <header className="text-gray-900 font-poppins">
         <nav
-          className="mx-auto max-w-7xl items-center justify-between p-6 lg:px-8 hidden lg:flex "
+          className="mx-auto max-w-7xl items-center justify-between py-4  lg:px-8 hidden lg:flex "
           aria-label="Global"
         >
           <div className="flex lg:flex-1  ">
-            <h2 className="font-anton text-4xl  flex justify-center items-center pb-3">
-              Jrbi. ok
+            <h2 className="font-anton text-5xl  flex justify-center items-center pb-3">
+              Jrbi
             </h2>
           </div>
      
@@ -279,7 +279,7 @@ function Navbar() {
 
         {/* Mobile Screens */}
         <div className="h-0 " role="dialog" aria-modal="true">
-          <div className="absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-auto px-6 py-6  lg:ring-1 lg:ring-gray-900/10 bg-yellow-300 top-0">
+          <div className={`${!toggle ? 'bg-white':'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
             <div className="flex items-center justify-between ">
               <div className="flex ">
                 <h2 className="font-anton text-4xl flex justify-center items-center pb-3">
@@ -311,13 +311,13 @@ function Navbar() {
                 )}
               </button>
             </div>
-            <div className={`${!toggle ? "hidden" : "flex"} mt-6 flow-root`}>
+            <div className={`${!toggle ? "hidden" : "flex"} mt-6 flow-root `}>
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   <div className="-mx-3">
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-pink-500"
+                      className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-pink-300"
                       aria-controls="disclosure-1"
                       aria-expanded="false"
                       onClick={() => setDropdown(!dropdown)}
@@ -343,49 +343,49 @@ function Navbar() {
                     >
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Analytics
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Engagement
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Security
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Integrations
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Automations
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Watch demo
                       </a>
 
                       <a
                         href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
                         Contact sales
                       </a>
@@ -393,19 +393,19 @@ function Navbar() {
                   </div>
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-300"
                   >
                     Feature
                   </a>
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-300"
                   >
                     Marketplace
                   </a>
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-300"
                   >
                     Company
                   </a>
@@ -413,7 +413,7 @@ function Navbar() {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-50"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-pink-300"
                   >
                     Log in
                   </a>

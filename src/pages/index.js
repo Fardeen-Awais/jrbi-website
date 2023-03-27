@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import { styles } from '@/styles/styles' // styles.paddingX idhar sai ai hai
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
+import Head from "next/head";
+import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -13,11 +14,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center z-0">
-        <Navbar/>
-        <Hero/>
-      </div>
+      <div class="relative ">
+  <div class="absolute w-[400px] top-0 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
+  <Navbar />
+  <Hero />
+  <About/>
+</div>
+
       </main>
     </>
-  )
+  );
 }
