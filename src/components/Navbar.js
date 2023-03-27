@@ -16,36 +16,15 @@ function Navbar() {
     <>
       <header className="text-gray-900 ">
         <nav
-          className="mx-auto max-w-7xl items-center justify-between p-6 lg:px-8 hidden sm:flex"
+          className="mx-auto max-w-7xl items-center justify-between p-6 lg:px-8 hidden lg:flex "
           aria-label="Global"
         >
           <div className="flex lg:flex-1  ">
             <h2 className="font-anton text-4xl  flex justify-center items-center pb-3">
-              Jrbi.
+              Jrbi. ok
             </h2>
           </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </button>
-          </div>
+     
           <div className="hidden lg:flex lg:gap-x-12">
             <div className="relative">
               <button
@@ -299,8 +278,8 @@ function Navbar() {
         </nav>
 
         {/* Mobile Screens */}
-        <div className="h-0" role="dialog" aria-modal="true">
-          <div className="absolute sm:hidden right-0 z-10 w-full overflow-y-auto  px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white top-0">
+        <div className="h-0 " role="dialog" aria-modal="true">
+          <div className="absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-auto px-6 py-6  lg:ring-1 lg:ring-gray-900/10 bg-yellow-300 top-0">
             <div className="flex items-center justify-between ">
               <div className="flex ">
                 <h2 className="font-anton text-4xl flex justify-center items-center pb-3">
