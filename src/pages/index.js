@@ -14,8 +14,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <div class="relative ">
-  <div class="absolute w-[400px] top-0 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
+      <div class="relative overflow-x-hidden">
+  <div class="absolute w-[350px] -top-10 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
   <Navbar />
   <Hero />
   <About/>

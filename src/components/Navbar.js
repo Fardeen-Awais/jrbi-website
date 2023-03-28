@@ -14,13 +14,13 @@ function Navbar() {
 
   return (
     <>
-      <header className="text-gray-900 font-poppins">
+      <header className="text-tertiary font-poppins">
         <nav
           className="mx-auto max-w-7xl items-center justify-between py-4  lg:px-8 hidden lg:flex "
           aria-label="Global"
         >
           <div className="flex lg:flex-1  ">
-            <h2 className="font-anton text-5xl  flex justify-center items-center pb-3">
+            <h2 className="font-anton  text-5xl flex justify-center items-center pb-3">
               Jrbi
             </h2>
           </div>
@@ -282,7 +282,7 @@ function Navbar() {
           <div className={`${!toggle ? 'bg-white':'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
             <div className="flex items-center justify-between ">
               <div className="flex ">
-                <h2 className="font-anton text-4xl flex justify-center items-center pb-3">
+                <h2 className="font-anton text-5xl flex justify-center items-center pb-3">
                   Jrbi
                 </h2>
               </div>

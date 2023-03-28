@@ -8,14 +8,14 @@
   - PageNavigator [x]
   - Login/ Logout -[x]
 
-- Hero - []
- - Includes brief intro
- - 3D Object
- - Background Pattern
+- Hero - [x]
+ - Includes brief intro [x]
+ - 3D Object []
+ - Background Pattern [x]
 
 - About - []
-  - Breif Introduction to interventio
-  - Who can participate
+  - Breif Introduction to intervention []
+  - Who can participate []
 
 - intervention section - []
   - Intervention Plans 
