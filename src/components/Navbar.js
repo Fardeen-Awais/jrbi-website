@@ -256,7 +256,7 @@ function Navbar() {
               onClick={() => handleLinkClick("Tournaments")}
             >
               Tournaments
-            </Link>
+              </Link>
             <Link
               href={"#"}
               className={` ${
