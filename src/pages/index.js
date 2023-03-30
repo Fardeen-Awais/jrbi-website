@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
+// import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
