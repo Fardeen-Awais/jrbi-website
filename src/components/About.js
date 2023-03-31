@@ -51,7 +51,7 @@ function About() {
         </div>
 
         <div className="flex flex-col-reverse">
-          <dt className="text-base leading-7 text-gray-300">Quizz</dt>
+          <dt className="text-base leading-7 text-gray-300">Quiz</dt>
           <dd className="text-2xl font-bold leading-9 tracking-tight text-white">100+</dd>
         </div>
 
