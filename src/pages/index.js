@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
       <main>
       <div class="relative overflow-x-hidden">
-  <div class="absolute w-[350px] -top-10 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
+  <div class="absolute -top-10 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
   <Navbar />
   <Hero />
   <About/>

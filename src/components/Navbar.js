@@ -31,7 +31,7 @@ function Navbar() {
                 type="button"
                 className={` ${
                   active === "product" ? "text-gray-900" : "text-gray-600"
-                } flex items-center gap-x-1 text-sm font-medium  leading-6 `}
+                } flex items-center gap-x-1 text-sm font-medium  leading-6 cursor-pointer`}
                 // aria-expanded="false"
                 onClick={() => handleLinkClick("product")}
               >
@@ -243,7 +243,7 @@ function Navbar() {
               href={"#"}
               className={` ${
                 active === "Blog" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Blog")}
             >
               Blog
@@ -252,16 +252,16 @@ function Navbar() {
               href={"#"}
               className={` ${
                 active === "Tournaments" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Tournaments")}
             >
               Tournaments
-            </Link>
+              </Link>
             <Link
               href={"#"}
               className={` ${
                 active === "Esports" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Esports")}
             >
               Esports
@@ -276,7 +276,7 @@ function Navbar() {
             </a>
           </div>
         </nav>
-
+        
         {/* Mobile Screens */}
         <div className="h-0 " role="dialog" aria-modal="true">
           <div className={`${!toggle ? 'bg-white':'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
