@@ -13,9 +13,9 @@
  - 3D Object []
  - Background Pattern [x]
 
-- About - []
-  - Breif Introduction to intervention []
-  - Who can participate []
+- About - [x]
+  - Breif Introduction to intervention [x]
+  - Who can participate [x]
 
 - intervention section - []
   - Intervention Plans 

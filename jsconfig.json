@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/layout*": ["components/layout/*"]
     }
-  }
+  },
 }
+
+// url add kya hai check ker lena code

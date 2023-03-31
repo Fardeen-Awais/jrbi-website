@@ -10,7 +10,9 @@ function Hero() {
       <h2 className='text-8xl py-3 font-extrabold text-tertiary font-anton'>Social Global <br className='hidden lg:flex' /> Problem</h2>
       <div className='lg:my-10 md:my-5 my-3 py-3 px-3 bg-pink-400 w-40 text-sm rounded-md cursor-pointer hover:bg-pink-300'>Shedule a meeting</div>
     </div> 
+   
     {/* Model */}
+    
     <div>
       <canvas> </canvas> {/* We will add model later */}
     </div>

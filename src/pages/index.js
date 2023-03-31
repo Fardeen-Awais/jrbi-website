@@ -3,9 +3,19 @@ import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Blog from "@/components/layout/Blog";
 
+function MyApp({ Component, pageProps }) {
+  if(Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />)
+  }
+}
+
+// code check
 export default function Home() {
   return (
+
+    
     <>
       <Head>
         <title>Jrbi - Psychologist</title>
@@ -19,7 +29,9 @@ export default function Home() {
   <Navbar />
   <Hero />
   <About/>
+  <Blog />
 </div>
+
 
       </main>
     </>
