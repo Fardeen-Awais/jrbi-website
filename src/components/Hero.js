@@ -3,7 +3,6 @@ import Image from 'next/image'
 function Hero() {
   return (
     <div className='min-h-screen relative top-10 lg:top-0 flex items-baseline font-poppins'>
-    {/* <img src="/herobg.png" alt="bg hero" /> */}
     {/* Introduction */}
     <div className='flex flex-col mx-6 md:mx-16  '>
       <p className='text-tertiary font-medium text-xl '>We are Solving</p>
