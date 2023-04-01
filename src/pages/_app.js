@@ -1,8 +1,6 @@
 import "@/styles/globals.css"
 import { Anton } from 'next/font/google'
 import { Poppins } from 'next/font/google'
-
-
 const anton = Anton({
   subsets: ['latin'],
   variable: '--font-anton',
@@ -15,7 +13,7 @@ const poppins = Poppins({
 })
 export default function App({ Component, pageProps }) {
   return (
-    <main className={`${poppins.variable} ${anton.variable} font-sans`}>
+    <main className={` ${anton.variable} ${poppins.variable}font-sans`}>
       <Component {...pageProps} />
     </main>
   );

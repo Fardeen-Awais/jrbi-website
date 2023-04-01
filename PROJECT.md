@@ -17,7 +17,7 @@
   - Breif Introduction to intervention [x]
   - Who can participate [x]
 
-- intervention section - []
+- intervention section - [...]
   - Intervention Plans 
     - Ask quiz and provide results accordingily. 
     

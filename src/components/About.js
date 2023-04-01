@@ -31,7 +31,7 @@ function About() {
   </svg>
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-2xl lg:mx-0">
-      <h2 className="text-4xl font-anton font-bold tracking-tight text-white sm:text-6xl">About Us</h2>
+      <h2 className="text-4xl font-anton font-bold tracking-normal text-white sm:text-6xl">About Us</h2>
       <p className="mt-6 text-lg leading-8 text-gray-300">Hey im joyce i'm a psychology professional. In this website you can relieve your bad social Habbits</p>
     </div>
     <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -51,7 +51,7 @@ function About() {
         </div>
 
         <div className="flex flex-col-reverse">
-          <dt className="text-base leading-7 text-gray-300">Quizz</dt>
+          <dt className="text-base leading-7 text-gray-300">Quiz</dt>
           <dd className="text-2xl font-bold leading-9 tracking-tight text-white">100+</dd>
         </div>
 

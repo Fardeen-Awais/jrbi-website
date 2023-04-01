@@ -16,11 +16,11 @@ function Navbar() {
     <>
       <header className="text-tertiary font-poppins">
         <nav
-          className="mx-auto max-w-7xl items-center justify-between py-4  lg:px-8 hidden lg:flex "
+          className="mx-auto max-w-7xl items-center justify-between py-4 lg:px-8 hidden lg:flex "
           aria-label="Global"
         >
           <div className="flex lg:flex-1  ">
-            <h2 className="font-anton  text-5xl flex justify-center items-center pb-3">
+            <h2 className="font-anton text-4xl flex justify-center items-center pb-3">
               Jrbi
             </h2>
           </div>
@@ -239,29 +239,32 @@ function Navbar() {
                 </div>
               </div>
             </div>
+           
             <Link
-              href={"#"}
+              href={"/blog"}
               className={` ${
                 active === "Blog" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Blog")}
             >
+           
               Blog
             </Link>
+           
             <Link
               href={"#"}
               className={` ${
                 active === "Tournaments" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Tournaments")}
             >
               Tournaments
-              </Link>
+            </Link>
             <Link
               href={"#"}
               className={` ${
                 active === "Esports" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-mediumleading-6 `}
+              } flex cursor-pointer items-center gap-x-1 text-sm font-medium leading-6 `}
               onClick={() => handleLinkClick("Esports")}
             >
               Esports

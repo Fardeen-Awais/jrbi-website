@@ -3,19 +3,9 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Blog from "@/components/layout/Blog";
-
-function MyApp({ Component, pageProps }) {
-  if(Component.getLayout) {
-    return Component.getLayout(<Component {...pageProps} />)
-  }
-}
-
-// code check
+import Interversions from "@/components/Interversions";
 export default function Home() {
   return (
-
-    
     <>
       <Head>
         <title>Jrbi - Psychologist</title>
@@ -24,15 +14,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <div class="relative overflow-x-hidden">
-  <div class="absolute w-[350px] -top-10 right-20 w-full min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0"/>
-  <Navbar />
-  <Hero />
-  <About/>
-  <Blog />
-</div>
-
-
+        <div class="relative overflow-x-hidden">
+          <div class="absolute w-[380px] -top-10 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0" />
+          <Navbar />
+          <Hero />
+          <About />
+          <Interversions/>
+        </div>
       </main>
     </>
   );
