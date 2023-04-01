@@ -248,7 +248,7 @@ function Navbar() {
               onClick={() => handleLinkClick("Blog")}
             >
            
-              Blo
+              Blog
             </Link>
            
             <Link
@@ -258,7 +258,7 @@ function Navbar() {
               } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Tournaments")}
             >
-              Tourname
+              Tournaments
             </Link>
             <Link
               href={"#"}
