@@ -19,19 +19,20 @@ function Navbar() {
           className="mx-auto max-w-7xl items-center justify-between py-4 lg:px-8 hidden lg:flex "
           aria-label="Global"
         >
-          <div className="flex lg:flex-1  ">
-            <h2 className="font-anton text-4xl flex justify-center items-center pb-3">
+          <Link href={'/'}>
+          <div className="flex lg:flex-1 ">
+            <h2 className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
               Jrbi
             </h2>
           </div>
-     
-          <div className="hidden lg:flex lg:gap-x-12">
+          </Link>
+          <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-32 space-x-4">
             <div className="relative">
               <button
                 type="button"
                 className={` ${
                   active === "product" ? "text-gray-900" : "text-gray-600"
-                } flex items-center gap-x-1 text-sm font-medium  leading-6 `}
+                } flex items-center gap-x-1  text-sm font-medium  leading-6 `}
                 // aria-expanded="false"
                 onClick={() => handleLinkClick("product")}
               >
@@ -86,7 +87,7 @@ function Navbar() {
                         <span className="absolute inset-0"></span>
                       </a>
                       <p className="mt-1 text-gray-800">
-                        Get a better understanding of your traffic
+                        Get a better understanding of stats in psychology
                       </p>
                     </div>
                   </div>
@@ -113,7 +114,7 @@ function Navbar() {
                         <span className="absolute inset-0"></span>
                       </a>
                       <p className="mt-1 text-gray-800">
-                        Speak directly to your customers
+                        How people interact in daily life
                       </p>
                     </div>
                   </div>
@@ -136,11 +137,11 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <a href="#" className="block font-semibold text-gray-900">
-                        Security
+                        Biology
                         <span className="absolute inset-0"></span>
                       </a>
                       <p className="mt-1 text-gray-800">
-                        Your customers data will be safe and secure
+                        Let's learn about biological behaviour in your life
                       </p>
                     </div>
                   </div>
@@ -241,7 +242,7 @@ function Navbar() {
             </div>
            
             <Link
-              href={"/blog"}
+              href={"/blogs"}
               className={` ${
                 active === "Blog" ? "text-gray-900" : "text-gray-600"
               } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
@@ -284,10 +285,13 @@ function Navbar() {
         <div className="h-0 " role="dialog" aria-modal="true">
           <div className={`${!toggle ? 'bg-white':'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
             <div className="flex items-center justify-between ">
-              <div className="flex ">
-                <h2 className="font-anton text-5xl flex justify-center items-center pb-3">
+              
+              <div className="flex cursor-pointer">
+              <Link href={'/'}>
+                <h2 className="font-anton text-4xl flex justify-center items-center pb-3 ">
                   Jrbi
                 </h2>
+              </Link>
               </div>
               <button
                 type="button"
@@ -325,7 +329,7 @@ function Navbar() {
                       aria-expanded="false"
                       onClick={() => setDropdown(!dropdown)}
                     >
-                      Product
+                      Interversions
                       <svg
                         className="h-5 w-5 flex-none"
                         viewBox="0 0 20 20"
@@ -348,14 +352,14 @@ function Navbar() {
                         href="#"
                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
-                        Analytics
+                        Biological Psyhology
                       </a>
 
                       <a
                         href="#"
                         className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7 text-gray-900 hover:bg-pink-50"
                       >
-                        Engagement
+                        Quick Quiz About your personality
                       </a>
 
                       <a

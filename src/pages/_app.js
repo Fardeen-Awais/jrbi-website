@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Anton } from 'next/font/google'
 import { Poppins } from 'next/font/google'
+import Navbar from "@/components/Navbar";
 
 const anton = Anton({
   subsets: ['latin'],
@@ -15,6 +16,7 @@ const poppins = Poppins({
 export default function App({ Component, pageProps }) {
   return (
     <main className={` ${anton.variable} ${poppins.variable}font-sans`}>
+      <Navbar/>
       <Component {...pageProps} />
     </main>
   );

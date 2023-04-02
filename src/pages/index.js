@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Interversions from "@/components/Interversions";
+import Blog from "@/components/Blog";
+import Contact from "@/components/Contact"
 export default function Home() {
   return (
     <>
@@ -16,10 +18,12 @@ export default function Home() {
       <main>
         <div class="relative overflow-x-hidden">
           <div class="absolute w-[380px] -top-10 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0" />
-          <Navbar />
+
           <Hero />
           <About />
           <Interversions/>
+          <Blog/>
+          <Contact/>
         </div>
       </main>
     </>

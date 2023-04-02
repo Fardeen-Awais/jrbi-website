@@ -17,16 +17,16 @@
   - Breif Introduction to intervention [x]
   - Who can participate [x]
 
-- intervention section - [...]
+- intervention section - [iqra behalf]
   - Intervention Plans 
     - Ask quiz and provide results accordingily. 
     
     For example, you can ask questions from a user and you will give feedback according to the input he provided. 
     If you user score 10 say excellent and if score 4 say bad.
 
-- Articles Section + Page - []
-  - Adding Blog Page
-  - Comment Section
+- Articles Section + Page - [x]
+  - Adding Blog Page [x]
+  - Comment Section [x]
 
 250$ charges in that steps.
 
