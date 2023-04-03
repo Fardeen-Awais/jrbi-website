@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
-
+import { styles } from "@/styles/styles";
 function Navbar() {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -16,23 +16,22 @@ function Navbar() {
     <>
       <header className="text-tertiary font-poppins">
         <nav
-          className="mx-auto max-w-7xl items-center justify-between py-4 lg:px-8 hidden lg:flex "
+          className={`mx-auto max-w-[85rem] ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
           aria-label="Global"
         >
           <Link href={'/'}>
-          <div className="flex lg:flex-1 ">
-            <h2 className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
-              Jrbi
-            </h2>
-          </div>
+            <div className="flex lg:flex-1 ">
+              <h2 className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
+                Jrbi
+              </h2>
+            </div>
           </Link>
-          <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-32 space-x-4">
+          <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-52 space-x-4">
             <div className="relative">
               <button
                 type="button"
-                className={` ${
-                  active === "product" ? "text-gray-900" : "text-gray-600"
-                } flex items-center gap-x-1  text-sm font-medium  leading-6 `}
+                className={` ${active === "product" ? "text-gray-900" : "text-gray-600"
+                  } flex items-center gap-x-1  text-sm font-medium  leading-6 `}
                 // aria-expanded="false"
                 onClick={() => handleLinkClick("product")}
               >
@@ -54,9 +53,8 @@ function Navbar() {
 
               {/* Options for product   */}
               <div
-                className={`${
-                  !toggle ? "hidden" : "absolute"
-                } -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-pink-400 shadow-lg ring-1 ring-gray-900/5`}
+                className={`${!toggle ? "hidden" : "absolute"
+                  } -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-pink-400 shadow-lg ring-1 ring-gray-900/5`}
               >
                 <div className="p-4">
                   <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-pink-300">
@@ -240,40 +238,37 @@ function Navbar() {
                 </div>
               </div>
             </div>
-           
+
             <Link
               href={"/blogs"}
-              className={` ${
-                active === "Blog" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
+              className={` ${active === "Blog" ? "text-gray-900" : "text-gray-600"
+                } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Blog")}
             >
-           
+
               Blog
             </Link>
-           
+
             <Link
               href={"#"}
-              className={` ${
-                active === "Tournaments" ? "text-gray-900" : "text-gray-600"
-              } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
+              className={` ${active === "Tournaments" ? "text-gray-900" : "text-gray-600"
+                } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Tournaments")}
             >
-              Tournaments
+              Assesments
             </Link>
             <Link
               href={"#"}
-              className={` ${
-                active === "Esports" ? "text-gray-900" : "text-gray-600"
-              } flex cursor-pointer items-center gap-x-1 text-sm font-medium leading-6 `}
+              className={` ${active === "Esports" ? "text-gray-900" : "text-gray-600"
+                } flex cursor-pointer items-center gap-x-1 text-sm font-medium leading-6 `}
               onClick={() => handleLinkClick("Esports")}
             >
-              Esports
+              video
             </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
-              href="#"
+              href="/login"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Log in <span aria-hidden="true">&rarr;</span>
@@ -283,15 +278,15 @@ function Navbar() {
 
         {/* Mobile Screens */}
         <div className="h-0 " role="dialog" aria-modal="true">
-          <div className={`${!toggle ? 'bg-white':'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
+          <div className={`${!toggle ? 'bg-white' : 'bg-pink-400'} absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}>
             <div className="flex items-center justify-between ">
-              
+
               <div className="flex cursor-pointer">
-              <Link href={'/'}>
-                <h2 className="font-anton text-4xl flex justify-center items-center pb-3 ">
-                  Jrbi
-                </h2>
-              </Link>
+                <Link href={'/'}>
+                  <h2 className="font-anton text-4xl flex justify-center items-center pb-3 ">
+                    Jrbi
+                  </h2>
+                </Link>
               </div>
               <button
                 type="button"

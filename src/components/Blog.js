@@ -1,7 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-function Blog() {
+import { createClient } from "next-sanity";
+import imageUrlBuilder from "@sanity/image-url"
+
+function Blog({posts}) {
+const client = createClient({
+    projectId: "rpf7v2k6", //Project id is in the sanity.json
+    dataset: "production",
+    useCdn: false,
+});
+console.log(posts)
   return (
     <div>
       <div className="bg-white py-24 sm:py-32">
@@ -194,5 +203,29 @@ function Blog() {
       </div>
     </div>
   );
+}
+export async function getServerSideProps(context) {
+  const client = createClient({
+    projectId: "rpf7v2k6", //Project id is in the sanity.json
+    dataset: "production",
+    useCdn: false,
+  });
+  const posts = await client.fetch(`*[_type == "post"][0]{
+    _id,
+    title,
+    author ->{
+      name,
+    },
+    metadesc,
+    mainImage,
+    slug
+    
+  }`); //The post.js in backend and fetching the content from the post.js in backend. You need to rememeber the syntax how to use author and its value like name. Make sure in the time of publishing you should define your author otherwise it will give you an error : Can't define the properties of undefine
+
+  return {
+    props: {
+      posts, //Return the fetch variable
+    },
+  };
 }
 export default Blog;

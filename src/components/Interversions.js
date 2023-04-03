@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/hoc'
 import React from 'react'
 
 function Interversions() {
@@ -52,4 +53,4 @@ function Interversions() {
   )
 }
 
-export default Interversions
+export default SectionWrapper(Interversions,'inter')

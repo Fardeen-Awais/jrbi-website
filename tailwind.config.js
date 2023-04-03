@@ -34,5 +34,9 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'), // Adding typography specially in articles
+    require('@tailwindcss/forms'), // I should implement my forms
+    require('@tailwindcss/line-clamp'), // Climping line in post description
+  ],
 }
