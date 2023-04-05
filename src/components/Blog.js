@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -196,5 +197,38 @@ function Blog() {
       </div>
     </div>
   );
+=======
+import React from 'react'
+
+function Blog() {
+  return (
+    <div class="bg-gray-100 min-h-screen py-32 px-10 ">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-10 xl-grid-cols-4 gap-y-10 gap-x-6 "> 
+
+  <div class="container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300">
+    <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/health/wp-content/uploads/2021/11/therapist_vs_psychotherapist_getty_creative.jpeg" alt="" class="rounded-t-lg w-full" />
+  <div class="p-6">
+    <a href="/blog" class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">This is Amazing for people to visit.</a>
+  <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis.</p>
+  </div>
+    </div>
+  <div class="container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300">
+    <img src="https://res.cloudinary.com/grand-canyon-university/image/fetch/w_750,h_564,c_fill,g_faces,q_auto/https://www.gcu.edu/sites/default/files/2022-09/GettyImages-1352017390.jpg" alt="" class="rounded-t-lg w-full" />
+  <div class="p-6">
+    <a href="/blog" class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">This is Amazing for people to visit.</a>
+  <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis.</p>
+  </div>
+    </div>
+  <div class="container mx-auto shadow-lg rounded-lg max-w-md hover:shadow-2xl transition duration-300">
+    <img src="https://149913238.v2.pressablecdn.com/wp-content/uploads/2020/04/organizational-psychologist-meeting-with-workers-in-workplace-750x350-1.jpg" alt="" class="rounded-t-lg w-full" />
+  <div class="p-6">
+    <a href="/blog" class="md:text-1xl text-xl hover:text-indigo-600 transition duration-200  font-bold text-gray-900 ">This is Amazing for people to visit.</a>
+  <p class="text-gray-700 my-2 hover-text-900 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quis.</p>
+  </div>
+    </div>
+    </div>
+</div>
+  )
+>>>>>>> Stashed changes
 }
 export default Blog
