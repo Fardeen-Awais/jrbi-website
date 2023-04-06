@@ -3,13 +3,13 @@ import Head from "next/head";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Interversions from "@/components/Interversions";
-import Blog from "@/components/Blog";
+// import Blog from "@/components/Blog";
 import Contact from "@/components/Contact"
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url"
 
-export default function Home({posts}) {
-  console.log(posts) // Imported sucessfully
+export default function Home() {
+  // console.log({blogs}) // Imported sucessfully
   return (
     <>
       <Head>
@@ -24,7 +24,7 @@ export default function Home({posts}) {
           <Hero />
           <About />
           <Interversions/>
-          <Blog/>
+          <Blog />
           <Contact/>
         </div>
       </main>
