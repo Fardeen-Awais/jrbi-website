@@ -3,6 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import { styles } from "@/styles/styles";
+import {motion} from 'framer-motion'
+import { textVariant } from "@/utils/motion";
+
 function Navbar() {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -16,12 +19,12 @@ function Navbar() {
     <>
       <header className="text-tertiary font-poppins">
         <nav
-          className={`mx-auto max-w-[85rem] ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
+          className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
           aria-label="Global"
         >
           <Link href={'/'}>
             <div className="flex lg:flex-1 ">
-              <h2 className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
+              <h2 variants={textVariant(2)} className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
                 Jrbi
               </h2>
             </div>

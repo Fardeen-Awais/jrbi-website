@@ -20,7 +20,7 @@ export default function Home({posts}) {
       </Head>
       <main>
         <div class="relative overflow-x-hidden">
-          <div class="absolute w-[380px] -top-24 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0" />
+          <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0" />
           <Hero />
           <About />
           <Interversions/>
@@ -38,11 +38,12 @@ export async function getServerSideProps(context) {
     dataset: "production",
     useCdn: false,
   });
-  const posts = await client.fetch(`*[_type == "blog"]`); //The post.js in backend and fetching the content from the post.js in backend. You need to rememeber the syntax how to use author and its value like name. Make sure in the time of publishing you should define your author otherwise it will give you an error : Can't define the properties of undefine
-
+  const blogs = await client.fetch(`*[_type == "blog"]`);
+  const author = await client.fetch(`*[_type == "author"]`);
   return {
     props: {
-      posts, //Return the fetch variable
+      blogs, //Return the fetch variable
+      author
     },
   };
 }
