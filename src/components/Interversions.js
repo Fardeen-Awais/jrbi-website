@@ -3,8 +3,7 @@ import React from 'react'
 
 function Interversions() {
     return (
- 
-        <div class="bg-gray-20 text-gray-600 px-6 lg:px-4 py-8">
+        <div class="bg-gray-20 text-gray-600 px-6 lg:px-4 py-8 mx-auto ">
             <div class="max-w-screen-xl mx-auto text-center">
                 <div class="grid grid-cols-8 md:grid-cols-9 lg:grid-cols-8 divide-gray-200 divide-y-2 md:divide-x-2 md:divide-y-0 md:-mx-8" >
                     <div class="col-span-8 md:col-span-3 lg:col-span-3 md:px-8 py-4 md:py-0 justify-between ">

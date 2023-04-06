@@ -38,7 +38,7 @@ function Navbar() {
                 // aria-expanded="false"
                 onClick={() => handleLinkClick("product")}
               >
-                Products
+                Menu
                 <svg
                   onClick={() => setToggle(!toggle)}
                   className="h-5 w-5 flex-none text-gray-400"

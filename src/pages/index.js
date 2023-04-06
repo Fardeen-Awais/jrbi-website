@@ -1,15 +1,15 @@
 import Head from "next/head";
 // import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import Service from "@/components/Service";
 import Interversions from "@/components/Interversions";
-// import Blog from "@/components/Blog";
+import Blog from "@/components/Blog";
 import Contact from "@/components/Contact"
 import { createClient } from "next-sanity";
-import imageUrlBuilder from "@sanity/image-url"
-
-export default function Home() {
-  // console.log({blogs}) // Imported sucessfully
+import Whocanjoin from "@/components/Whocanjoin";
+import Video from "@/components/Video";
+export default function Home({posts,author,youtube}) {
+  const firstThreePosts = posts.slice(0, 3);
   return (
     <>
       <Head>
@@ -19,12 +19,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div class="relative overflow-x-hidden">
-          <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0" />
+        <div class="relative overflow-x-hidden prose-h2:text-6xl prose-h1:text-8xl prose-h3:text-tertiary ">
+          <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0 " />
           <Hero />
-          <About />
+          <Service />
+          <Whocanjoin/>
           <Interversions/>
-          <Blog />
+          <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-4'>Popular Blog</h2>
+          <Blog posts={firstThreePosts}/>
+          <Video youtube={youtube}/>
           <Contact/>
         </div>
       </main>
@@ -38,12 +41,14 @@ export async function getServerSideProps(context) {
     dataset: "production",
     useCdn: false,
   });
-  const blogs = await client.fetch(`*[_type == "blog"]`);
+  const posts = await client.fetch(`*[_type == "blog"]`);
   const author = await client.fetch(`*[_type == "author"]`);
+  const youtube = await client.fetch(`*[_type == "youtube"]`);
   return {
     props: {
-      blogs, //Return the fetch variable
-      author
+      posts, //Return the fetch variable
+      author,
+      youtube
     },
   };
 }

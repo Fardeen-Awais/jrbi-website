@@ -12,12 +12,11 @@ function Blog({posts}) {
     useCdn: false,
   });
   const builder = imageUrlBuilder(client);
-  console.log(posts)
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 ">
     {posts.map((arg) => {
       return (
-        <Link href={"/blogs/" + arg.slug.current} key={arg.slug}>
+        <Link href={"/research/" + arg.slug.current} key={arg.slug}>
           <div className="group cursor-pointer shadow-md overflow-hidden my-2 h-96 flex flex-col">
             <Image
               src={builder.image(arg.mainImage).url()}
@@ -29,11 +28,10 @@ function Blog({posts}) {
 
             <div className="flex justify-center p-4 bg-white">
               <div>
-                <h2 className="font-anton text-2xl leading-7 tracking-tight font-medium hover:text-blue-900 line-clamp-2">{arg.title}</h2>
+                <h3 className="font-poppins text-xl font-semibold hover:text-blue-900 line-clamp-2">{arg.title}</h3>
                 <p className="text-sm my-2 tracking-wider line-clamp-4">{arg.metadesc}</p>
               </div>
             </div>
-
           </div>
         </Link>
       );
