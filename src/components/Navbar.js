@@ -253,7 +253,7 @@ function Navbar() {
             </Link>
 
             <Link
-              href={"#"}
+              href={"/assesment"}
               className={` ${active === "Tournaments" ? "text-gray-900" : "text-gray-600"
                 } flex items-center gap-x-1 text-sm font-medium leading-6 cursor-pointer`}
               onClick={() => handleLinkClick("Tournaments")}
@@ -261,7 +261,7 @@ function Navbar() {
               Assesments
             </Link>
             <Link
-              href={"#"}
+              href={"/video"}
               className={` ${active === "Esports" ? "text-gray-900" : "text-gray-600"
                 } flex cursor-pointer items-center gap-x-1 text-sm font-medium leading-6 `}
               onClick={() => handleLinkClick("Esports")}

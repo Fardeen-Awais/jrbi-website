@@ -2,14 +2,16 @@ import Head from "next/head";
 // import { styles } from "@/styles/styles"; // styles.paddingX idhar sai ai hai
 import Hero from "@/components/Hero";
 import Service from "@/components/Service";
-import Interversions from "@/components/Interversions";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact"
 import { createClient } from "next-sanity";
 import Whocanjoin from "@/components/Whocanjoin";
 import Video from "@/components/Video";
-export default function Home({posts,author,youtube}) {
+import Assesments from "@/components/assesments";
+import { Trusted } from "@/components/trusted";
+export default function Home({posts,youtube,asses}) {
   const firstThreePosts = posts.slice(0, 3);
+  const firstThreeVideo = youtube.slice(0,3)
   return (
     <>
       <Head>
@@ -24,10 +26,11 @@ export default function Home({posts,author,youtube}) {
           <Hero />
           <Service />
           <Whocanjoin/>
-          <Interversions/>
           <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-4'>Popular Blog</h2>
           <Blog posts={firstThreePosts}/>
-          <Video youtube={youtube}/>
+          <Video youtube={firstThreeVideo}/>
+          <Assesments asses={asses}/>
+          <Trusted/>
           <Contact/>
         </div>
       </main>
@@ -44,11 +47,13 @@ export async function getServerSideProps(context) {
   const posts = await client.fetch(`*[_type == "blog"]`);
   const author = await client.fetch(`*[_type == "author"]`);
   const youtube = await client.fetch(`*[_type == "youtube"]`);
+  const asses = await client.fetch(`*[_type == "assessment"][0..2]`);
   return {
     props: {
       posts, //Return the fetch variable
       author,
-      youtube
+      youtube,
+      asses
     },
   };
 }

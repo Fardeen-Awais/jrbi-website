@@ -9,7 +9,7 @@ const anton = Anton({
   weight: ['400'],
 })
 const poppins = Poppins({
-  subsets: ['latin'],
+  subsets: ['latin-ext'],
   variable: '--font-poppins',
   weight: ['400'],
 })
