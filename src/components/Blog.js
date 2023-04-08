@@ -7,7 +7,7 @@ import imageUrlBuilder from "@sanity/image-url"
 
 function Blog({ posts }) {
   const client = createClient({
-    projectId: "rpf7v2k6", //Project id is in the sanity.json
+    projectId: "54m8bn61", //Project id is in the sanity.json
     dataset: "production",
     useCdn: false,
   });
@@ -17,7 +17,7 @@ function Blog({ posts }) {
       {posts.map((arg) => {
         return (
           <Link href={"/research/" + arg.slug.current} key={arg.slug}>
-            <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+            <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg h-96">
               <Image
                 src={builder.image(arg.mainImage).url()}
                 alt={arg.title}

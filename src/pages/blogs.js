@@ -4,6 +4,7 @@ import Link from "next/link";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url"
 import Blog from "@/components/Blog";
+
 function Blogs({ posts }) {
  
   return (
@@ -14,7 +15,7 @@ function Blogs({ posts }) {
 }
 export async function getServerSideProps(context) {
   const client = createClient({
-    projectId: "rpf7v2k6", //Project id is in the sanity.json
+    projectId: "54m8bn61", //Project id is in the sanity.json
     dataset: "production",
     useCdn: false,
   });

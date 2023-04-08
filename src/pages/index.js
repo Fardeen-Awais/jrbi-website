@@ -8,7 +8,8 @@ import { createClient } from "next-sanity";
 import Whocanjoin from "@/components/Whocanjoin";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
-import { Trusted } from "@/components/trusted";
+import { Trusted } from "@/components/Trusted";
+
 export default function Home({posts,youtube,asses}) {
   const firstThreePosts = posts.slice(0, 3);
   const firstThreeVideo = youtube.slice(0,3)
@@ -40,7 +41,7 @@ export default function Home({posts,youtube,asses}) {
 
 export async function getServerSideProps(context) {
   const client = createClient({
-    projectId: "rpf7v2k6", //Project id is in the sanity.json
+    projectId: "54m8bn61", //Project id is in the sanity.json
     dataset: "production",
     useCdn: false,
   });

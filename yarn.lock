@@ -715,6 +715,15 @@
     get-it "^8.1"
     rxjs "7"
 
+"@sanity/client@^5.4.2":
+  version "5.4.2"
+  resolved "https://registry.yarnpkg.com/@sanity/client/-/client-5.4.2.tgz#253b11d76a058de1fe6ec4f191d5872c7825fa80"
+  integrity sha512-M/ebzTGwYq+NDGMfBWxKtwtmCRJbBvXxAIQXu/J0vxnr8mXKw8gBQ7GaG0tI4WJ54w5sI6pnrD6mPiKdRHVNYw==
+  dependencies:
+    "@sanity/eventsource" "5"
+    get-it "^8.1"
+    rxjs "7"
+
 "@sanity/eventsource@5":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@sanity/eventsource/-/eventsource-5.0.0.tgz#45410c8259e0bb80b4e308e1872846439590805a"
@@ -2703,6 +2712,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+next-sanity-client@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/next-sanity-client/-/next-sanity-client-1.0.6.tgz#bb0ce9f078558fa0fe1ffe81601c0f573f58140c"
+  integrity sha512-2WMKM2UAaWemau3Ln5T8L8EIKR3g6H2TGIUTnvYrwkfvvSXpUomZ8ROIF7jg/U9jnHmc9QGYfscO8rN1JiYKwQ==
+
 next-sanity@^4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-4.1.6.tgz#e4aba26b5f4a3dd6a97912c22f1bf98811748122"
@@ -3084,6 +3098,11 @@ react-dom@18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-hook-form@^7.43.9:
+  version "7.43.9"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.43.9.tgz#84b56ac2f38f8e946c6032ccb760e13a1037c66d"
+  integrity sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
