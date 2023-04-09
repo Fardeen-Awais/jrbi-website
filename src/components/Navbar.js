@@ -143,7 +143,7 @@ function Navbar() {
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                        Let's learn about biological behaviour in your life
+                        Let&apos;s learn about biological behaviour in your life
                       </p>
                     </div>
                   </div>
@@ -272,12 +272,12 @@ function Navbar() {
             </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="/login"
+            <Link
+              href="/"
               className="text-sm font-semibold leading-6 text-gray-900"
             >
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
 
