@@ -27,7 +27,7 @@ export default function Home({posts,youtube,asses}) {
           <Hero />
           <Service />
           <Whocanjoin/>
-          <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-4'>Popular Blog</h2>
+          <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-10'>Popular Blog</h2>
           <Blog posts={firstThreePosts}/>
           <Video youtube={firstThreeVideo}/>
           <Assesments asses={asses}/>
