@@ -18,62 +18,62 @@ function Navbar() {
   return (
     <>
       <header className="text-tertiary font-poppins">
-        <nav
-          className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
-          aria-label="Global"
+      <nav
+  className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
+  aria-label="Global"
+>
+  <Link href={'/'}>
+    <div className="flex lg:flex-1 ">
+      <h2 variants={textVariant(2)} className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
+        Jrbi&apos;s
+      </h2>
+    </div>
+  </Link>
+  <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-52 space-x-4">
+    <div className="relative">
+      <button
+        type="button"
+        className={` ${active === "product" ? "text-gray-900" : "text-gray-600"
+          } flex items-center gap-x-1  text-sm font-medium  leading-6 `}
+        // aria-expanded="false"
+        onClick={() => handleLinkClick("product")}
+      >
+        Menu
+        <svg
+          onClick={() => setToggle(!toggle)}
+          className="h-5 w-5 flex-none text-gray-400"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
         >
-          <Link href={'/'}>
-            <div className="flex lg:flex-1 ">
-              <h2 variants={textVariant(2)} className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
-                Jrbi
-              </h2>
-            </div>
-          </Link>
-          <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-52 space-x-4">
-            <div className="relative">
-              <button
-                type="button"
-                className={` ${active === "product" ? "text-gray-900" : "text-gray-600"
-                  } flex items-center gap-x-1  text-sm font-medium  leading-6 `}
-                // aria-expanded="false"
-                onClick={() => handleLinkClick("product")}
-              >
-                Menu
-                <svg
-                  onClick={() => setToggle(!toggle)}
-                  className="h-5 w-5 flex-none text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
+          <path
+            fillRule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
 
-              {/* Options for product   */}
-              <div
-                className={`${!toggle ? "hidden" : "absolute"
-                  } -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-pink-400 shadow-lg ring-1 ring-gray-900/5`}
+      {/* Options for product   */}
+      <div
+        className={`${!toggle ? "hidden" : "absolute"
+          } -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-pink-400 shadow-lg ring-1 ring-gray-900/5`}
+      >
+        <div className="p-4">
+          <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-pink-300">
+            <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-pink-50 group-hover:bg-white">
+              <svg
+                className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
               >
-                <div className="p-4">
-                  <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-pink-300">
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-pink-50 group-hover:bg-white">
-                      <svg
-                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 6a7.5 7.5  0 107.5 7.5h-7.5V6z"
                         />
                         <path
                           stroke-linecap="round"
@@ -83,10 +83,11 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <a href="#" className="block font-semibold text-gray-900">
+                    
+                    <Link href="/" className="block font-semibold text-gray-900">
                         Analytics
                         <span className="absolute inset-0"></span>
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-800">
                         Get a better understanding of stats in psychology
                       </p>
@@ -110,10 +111,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <a href="#" className="block font-semibold text-gray-900">
+                      <Link href="/" className="block font-semibold text-gray-900">
                         Engagement
                         <span className="absolute inset-0"></span>
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-800">
                         How people interact in daily life
                       </p>
@@ -137,10 +138,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <a href="#" className="block font-semibold text-gray-900">
+                      <Link href="/" className="block font-semibold text-gray-900">
                         Biology
                         <span className="absolute inset-0"></span>
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-800">
                         Let's learn about biological behaviour in your life
                       </p>
@@ -164,10 +165,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <a href="#" className="block font-semibold text-gray-900">
+                      <Link href="/" className="block font-semibold text-gray-900">
                         Integrations
                         <span className="absolute inset-0"></span>
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-800">
                         Connect with third-party tools
                       </p>
@@ -191,10 +192,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <a href="#" className="block font-semibold text-gray-900">
+                      <Link href="/" className="block font-semibold text-gray-900">
                         Automations
                         <span className="absolute inset-0"></span>
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-800">
                         Build strategic funnels that will convert
                       </p>
@@ -240,7 +241,8 @@ function Navbar() {
                   </a>
                 </div>
               </div>
-            </div>
+          
+          </div>
 
             <Link
               href={"/blogs"}
@@ -327,7 +329,7 @@ function Navbar() {
                       aria-expanded="false"
                       onClick={() => setDropdown(!dropdown)}
                     >
-                      Interversions
+                      Menu
                       <svg
                         className="h-5 w-5 flex-none"
                         viewBox="0 0 20 20"

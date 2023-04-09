@@ -42,22 +42,6 @@ function Blog({ posts }) {
                 </p>
               </div>
             </article>
-            {/* <div className="group cursor-pointer shadow-md overflow-hidden my-2 h-96 flex flex-col">
-            <Image
-              src={builder.image(arg.mainImage).url()}
-              alt="gaming"
-              width={700}
-              height={400}
-              className="h-48 w-full object-cover transition-transform duration-200 ease-in-out center group-hover:scale-105"
-            />
-
-            <div className="flex justify-center p-4 bg-white">
-              <div>
-                <h3 className="font-poppins text-xl font-semibold hover:text-blue-900 line-clamp-2">{arg.title}</h3>
-                <p className="text-sm my-2 tracking-wider line-clamp-4">{arg.metadesc}</p>
-              </div>
-            </div>
-          </div> */}
           </Link>
         );
       })}
