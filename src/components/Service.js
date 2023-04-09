@@ -11,9 +11,9 @@ function Service() {
       <h2 className='font-anton flex justify-center items-center mx-auto text-tertiary py-10'>Our service</h2>
       <motion.div>
       <Chrono mode="VERTICAL_ALTERNATING" theme={{
-        primary: '#f3c6c0',
-        secondary: '#f8e4e3',
-        cardBgColor: '#f3c6c0',
+        primary: '#151030',
+        secondary: '#f3f3f3',
+        cardBgColor: '#f3f3f3',
         titleColor: '#151030',
         titleColorActive: '#151030',
         cardDetailsColor: 'black'

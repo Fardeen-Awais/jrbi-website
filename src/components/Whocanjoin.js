@@ -11,7 +11,7 @@ function Whocanjoin() {
       <div className='h-screen flex lg:items-start items-center justify-between font-poppins'>
         {/* Introduction */}
         <div className='flex flex-col prose'>
-          <h2 className='py-3 font-extrabold text-tertiary font-anton mb-4'>Who can join us </h2>
+          <h2 className='py-3 text-tertiary font-anton mb-4'>Who can join us </h2>
           <p className='max-w-xl'>Are you looking to improve your lifestyle and overall psychological wellbeing? Our intervention plan is open to anyone seeking support in areas such as marriages, mental health, and lifestyle changes. <br/> <br/> As a participant, you&rsquo;ll have access to our research&ndash;backed model and the guidance of our trained professionals. Join us today and take the first step towards a happier, healthier you! </p>
           <ul className='list-disc pl-6 text-tertiary'>
             <li>Access to research&ndash;backed model</li>

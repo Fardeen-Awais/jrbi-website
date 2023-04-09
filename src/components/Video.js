@@ -1,8 +1,5 @@
 import React from 'react'
-import { createClient } from "next-sanity";
-
 function Video({ youtube }) {
-  console.log({ youtube })
   return (
     <>
       <div className='flex flex-col justify-center items-center max-w-7xl min-h-screen'>

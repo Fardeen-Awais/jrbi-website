@@ -4,7 +4,9 @@ import { createClient } from 'next-sanity'
 
 const assesment = ({asses}) => {
   return (
-    <div><Assesments asses={asses}/></div>
+    <div>
+      <Assesments asses={asses}/>
+      </div>
   )
 }
 

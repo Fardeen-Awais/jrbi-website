@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SectionWrapper } from "@/hoc";
 import { createClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url"
 
@@ -13,7 +12,7 @@ function Blog({ posts }) {
   });
   const builder = imageUrlBuilder(client);
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
       {posts.map((arg) => {
         return (
           <Link href={"/research/" + arg.slug.current} key={arg.slug}>
