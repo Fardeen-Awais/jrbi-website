@@ -9,7 +9,6 @@ const assesment = ({asses}) => {
       </div>
   )
 }
-
 export async function getServerSideProps(context) {
   const client = createClient({
     projectId: "54m8bn61", //Project id is in the sanity.json

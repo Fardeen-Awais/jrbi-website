@@ -3,12 +3,13 @@ import Link from "next/link";
 import Image from 'next/image';
 
 function Assesment({ asses }) {
+  console.log({asses})
   return (
     <>
     <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-10'>Assesments</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 ">
       {asses.map((assessment) => (
-        <Link  href={"/quiz/" + assessment.slug} key={assessment.slug}>
+        <Link  href={"/quiz/" + assessment.slug.current} key={assessment.slug}>
           <div className="relative flex items-center justify-between rounded-xl border border-gray-100 p-4 shadow-md hover:shadow-sm sm:p-6 lg:p-8 cursor-pointer">
             <div className="pt-4 text-gray-500">
               <svg
