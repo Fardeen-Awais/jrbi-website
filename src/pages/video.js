@@ -1,6 +1,6 @@
 import React from 'react'
 import Video from '@/components/Video'
-import { createClient } from 'next-sanity';
+import { createClient } from '@sanity/client';
 export default function video({ youtube }) {
     return (
         <div className='my-20 md:my-10'>

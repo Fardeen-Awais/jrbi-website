@@ -1,6 +1,6 @@
 import React from 'react'
 import Assesments from '@/components/assesments'
-import { createClient } from 'next-sanity'
+import { createClient } from '@sanity/client';
 
 const assesment = ({asses}) => {
   return (
