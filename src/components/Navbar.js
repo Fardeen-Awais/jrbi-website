@@ -1,15 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
 import { styles } from "@/styles/styles";
 import { motion } from 'framer-motion'
 import { textVariant } from "@/utils/motion";
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import DynamicFormIcon from '@mui/icons-material/DynamicForm';
-import ArticleIcon from '@mui/icons-material/Article';
-import WorkspacesIcon from '@mui/icons-material/Workspaces';
-import { Phone } from "@mui/icons-material";
+
 
 function Navbar() {
   const [active, setActive] = useState("");

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from 'next/image';
 
 function Assesment({ asses }) {
-  console.log({asses})
+  // console.log({asses})
   return (
     <>
     <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-10'>Assesments</h2>

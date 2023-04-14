@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url"
 import Blog from "@/components/Blog";
 

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import { useState } from "react";
 
 const Quiz = ({ quizzes }) => {

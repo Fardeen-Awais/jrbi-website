@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Service from "@/components/Service";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact"
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import Whocanjoin from "@/components/Whocanjoin";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";

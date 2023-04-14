@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url"
 
 function Blog({ posts }) {
@@ -16,7 +16,7 @@ function Blog({ posts }) {
       {posts.map((arg) => {
         return (
           <Link href={"/research/" + arg.slug.current} key={arg.slug}>
-            <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg h-96">
+            <article class="overflow-hidden rounded-lg shadow-lg transition hover:shadow-md h-96">
               <Image
                 src={builder.image(arg.mainImage).url()}
                 alt={arg.title}

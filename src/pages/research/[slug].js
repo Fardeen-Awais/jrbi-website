@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import { useForm} from "react-hook-form";
 import { useState } from "react";
 
