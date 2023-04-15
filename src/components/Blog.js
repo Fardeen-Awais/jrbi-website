@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-
+import { fadeIn, zoomIn } from "@/utils/motion";
+import { motion } from "framer-motion";
 function Blog({ posts }) {
   const client = createClient({
     projectId: "54m8bn61", //Project id is in the sanity.json
@@ -13,7 +14,7 @@ function Blog({ posts }) {
   const builder = imageUrlBuilder(client);
   return (
     <div className="min-h-screen py-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
+      <motion.div variants ={fadeIn('right','spring',0.8,0.5)} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
         {posts.map((arg) => {
           return (
             <Link href={"/research/" + arg.slug.current} key={arg.slug}>
@@ -47,7 +48,7 @@ function Blog({ posts }) {
             </Link>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

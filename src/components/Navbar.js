@@ -2,10 +2,8 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { styles } from "@/styles/styles";
-import { motion } from 'framer-motion'
-import { textVariant } from "@/utils/motion";
-
-
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
 function Navbar() {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -23,11 +21,12 @@ function Navbar() {
           aria-label="Global"
         >
           <Link href={'/'}>
-            <div className="flex lg:flex-1 ">
-              <h2 variants={textVariant(2)} className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
+            <motion.div 
+    variants ={fadeIn('up','spring',3,5)} className="flex lg:flex-1 ">
+              <h2 className="font-anton text-4xl flex justify-center items-center pb-3 cursor-pointer ">
                 Jrbi
               </h2>
-            </div>
+            </motion.div>
           </Link>
           <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mx-52 space-x-4">
             <div className="relative">

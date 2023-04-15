@@ -2,67 +2,95 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { createClient } from "@sanity/client";
 import { useState } from "react";
+import { useEffect } from "react";
 
-const Quiz = ({ quizzes }) => {
-  console.log("quizzes:", quizzes); // check if quizzes is defined
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
-  const [showResults, setShowResults] = useState(false);
+const Quiz = ({ quiz }) => {
+  const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
-  const handleOptionSelect = (optionIndex) => {
-    setSelectedOptionIndex(optionIndex);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [feedback, setFeedback] = useState("");
+
+  const handleOptionChange = (questionIndex, selectedOptionIndex) => {
+    const newAnswers = [...userAnswers];
+    newAnswers[questionIndex] = selectedOptionIndex;
+    setUserAnswers(newAnswers);
   };
 
-  const handleNextButtonClick = () => {
-    const currentQuestion = quizzes[currentQuestionIndex];
-    console.log("currentQuestion:", currentQuestion); // check if currentQuestion is defined
-    const isCorrect = currentQuestion.options[selectedOptionIndex].isCorrect;
-    if (isCorrect) {
-      setScore(score + 1);
-    }
-    setSelectedOptionIndex(null);
-    if (currentQuestionIndex === quizzes.length - 1) {
-      setShowResults(true);
+  useEffect(() => {
+    let newScore = 0;
+    quiz.quizzes.forEach((question, index) => {
+      const selectedOptionIndex = userAnswers[index];
+      if (selectedOptionIndex !== undefined && question.options[selectedOptionIndex].isCorrect) {
+        newScore += 10;
+      }
+    });
+    setScore(newScore);
+  }, [quiz, userAnswers]);
+
+  const handleSubmitQuiz = () => {
+    setIsSubmitted(true);
+    const percentage = (score / (quiz.quizzes.length * 10)) * 100;
+    if (percentage <= 25) {
+      setFeedback("Poor");
+    } else if (percentage <= 50) {
+      setFeedback("Good");
+    } else if (percentage <= 75) {
+      setFeedback("Excellent");
     } else {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setFeedback("Perfect");
     }
   };
 
-  const calculateAccuracy = () => {
-    return ((score / quizzes.length) * 100).toFixed(2);
-  };
-
-  if (showResults) {
-    return (
-      <div>
-        <h1>Results</h1>
-        <p>You scored {score} out of {quizzes.length} ({calculateAccuracy()}%)</p>
-      </div>
-    );
-  }
-  const currentQuestion = quizzes[currentQuestionIndex];
-
-  if (!currentQuestion || !currentQuestion.options) {
-    return <div>This section will be available soon...</div>;
-  }
-  
   return (
     <div>
-      <h1>{currentQuestion.question}</h1>
-      <ul>
-        {currentQuestion.options.map((option, index) => (
-          <li key={option._key}>
-            <button onClick={() => handleOptionSelect(index)} disabled={selectedOptionIndex !== null}>
+      {!isSubmitted && quiz.quizzes.map((question, index) => (
+        <div key={question._key}>
+          <p>{question.question}</p>
+          {question.options.map((option, optionIndex) => (
+            <label key={option._key}>
+              <input
+                type="radio"
+                name={`quiz-${index}`}
+                value={option.option}
+                checked={userAnswers[index] === optionIndex}
+                onChange={() => handleOptionChange(index, optionIndex)}
+              />
               {option.option}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={handleNextButtonClick} disabled={selectedOptionIndex === null}>Next</button>
+            </label>
+          ))}
+        </div>
+      ))}
+      {!isSubmitted && <button onClick={handleSubmitQuiz}>Submit Quiz</button>}
+      {isSubmitted && (
+        <div>
+          {quiz.quizzes.map((question, index) => (
+            <div key={question._key}>
+              <p>{question.question}</p>
+              {question.options.map((option, optionIndex) => (
+                <label key={option._key}>
+                  <input
+                    type="radio"
+                    name={`quiz-${index}`}
+                    value={option.option}
+                    checked={userAnswers[index] === optionIndex}
+                    disabled
+                  />
+                  {option.option}
+                </label>
+              ))}
+              <p>{`Your answer: ${question.options[userAnswers[index]].option}`}</p>
+            </div>
+          ))}
+          <p>Score: {score}/{quiz.quizzes.length * 10}</p>
+          <p>Feedback: {feedback}</p>
+        </div>
+      )}
     </div>
   );
-  
 };
+
+
+
 
 export async function getServerSideProps(context) {
   const client = createClient({
@@ -70,12 +98,12 @@ export async function getServerSideProps(context) {
     dataset: "production",
     useCdn: false,
   });
-  const quizzes = await client.fetch(`*[_type == "assessment"]{
-    quizzes
+  const quiz = await client.fetch(`*[_type == "assessment"][0]{
+    quizzes,
   }`); 
   return {
     props: {
-      quizzes, //Return the fetch variable
+      quiz, //Return the fetch variable
     },
   };
 }

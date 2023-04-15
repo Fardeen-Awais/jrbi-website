@@ -4,12 +4,12 @@ import Image from 'next/image';
 import StarWrapper from '@/hoc/SectionWrapper';
 import { Chrono } from "react-chrono";
 import { fadeIn } from '@/utils/motion';
-function Service() {
 
+function Service() {
   return (
     <div className="min-h-screen prose-h2:text-tertiary" >
       <h2 className='font-anton flex justify-center items-center mx-auto text-tertiary py-10'>Our service</h2>
-      <motion.div>
+      <motion.div variants ={fadeIn('up','spring',0.5,1)}>
       <Chrono mode="VERTICAL_ALTERNATING" theme={{
         primary: '#151030',
         secondary: '#f3f3f3',

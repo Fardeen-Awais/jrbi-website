@@ -2,11 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import StarWrapper from '@/hoc/SectionWrapper'
 import { motion } from 'framer-motion'
-import { zoomIn } from '@/utils/motion'
+import { fadeIn } from '@/utils/motion'
+import { textVariant } from '@/utils/motion'
 function Hero() {
   return (
     <motion.div
-    variants ={zoomIn(1,0.3)}
+    variants ={fadeIn('up','spring',0.3,0.5)}
     className='min-h-screen flex lg:items-start items-center justify-between font-poppins'>
     {/* Introduction */}
     <div className='flex flex-col my-3'>
@@ -26,7 +27,8 @@ function Hero() {
     {/* Model */}
     
     <div>
-      <canvas> </canvas> {/* We will add model later */}
+      <canvas>
+         </canvas> {/* We will add model later */}
     </div>
     </motion.div>
   )
