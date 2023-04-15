@@ -7,6 +7,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import PortableText from "react-portable-text";
 
 const Post = ({ blog }) => {
+  console.log({blog})
   const client = createClient({
     projectId: "54m8bn61", //Project id is in the sanity.json
     dataset: "production",
@@ -39,25 +40,35 @@ const Post = ({ blog }) => {
 
   return (
     <>
-      
       <div className=" mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-[80px] mt-19 ">
-        <h1 className="sm:text-4xl font-semibold text-3xl mb-4 ">
-              {blog.title}
-            </h1>
-            <Image
-                  src={builder.image(blog.mainImage).url()}
-                  alt={blog.title}
-                  width={700}
-                  height={400}
-                  className="h-48 lg:h-96 md:72 w-full object-cover transition-transform duration-200 ease-in-out center group-hover:scale-105"
-                />
-      <article className="prose mx-auto max-w-7xl flex justify-center items-center prose-headings:text-tertiary prose-headings:font-anton prose-p:font-poppins"><PortableText
-      content={blog.body}
-    />
-   
-      </article> 
-            </div>
-     
+       
+        <div className="flex flex-col">
+        <h1 className="sm:text-4xl font-anton tracking-wide text-3xl mb-4 ">
+          {blog.title} 
+        </h1>
+        <div className="flex items-center my-3">
+        <Image
+          src={builder.image(blog.author.authorImage).url()}
+          alt={blog.author.name}
+          width={700}
+          height={400}
+          className="h-10 w-10 rounded-full"
+        />
+        <p className="text-sm py-4 mx-2">Post By: {blog.author.name} | Date: {blog._createdAt}  </p>
+        </div>
+        </div>
+        <Image
+          src={builder.image(blog.mainImage).url()}
+          alt={blog.title}
+          width={700}
+          height={400}
+          className="h-48 lg:h-96 md:72 w-full object-cover transition-transform duration-200 ease-in-out center group-hover:scale-105"
+        />
+        <article className="prose mx-auto max-w-7xl flex justify-center items-center prose-headings:text-tertiary prose-headings:font-poppins prose-p:font-poppins">
+          <PortableText content={blog.body} />
+        </article>
+      </div>
+
       <div className="flex flex-col p-10 my-10 ">
         <hr className="py-3 mt-2" />
         <h4 className="text-2xl sm:text-4xl font-semibold mx-auto p-5">
@@ -154,6 +165,7 @@ export const getServerSideProps = async (context) => {
     title,
     mainImage,
     metadesc,
+    category,
     author->{
       name,
       desc,

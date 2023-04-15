@@ -34,13 +34,14 @@ function Blog({ posts }) {
                     {arg._createdAt}
                   </time>
 
-                  <h3 class="mt-0.5 text-xl text-gray-900 font-poppins line-clamp-2">
+                  <h3 class="mt-0.5 text-xl text-tertiary font-poppins line-clamp-2">
                     {arg.title}
                   </h3>
 
                   <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
                     {arg.metadesc}
                   </p>
+                 
                 </div>
               </div>
             </Link>
