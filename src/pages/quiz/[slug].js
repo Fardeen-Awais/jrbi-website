@@ -43,7 +43,7 @@ const Quiz = ({ quizzes }) => {
   const currentQuestion = quizzes[currentQuestionIndex];
 
   if (!currentQuestion || !currentQuestion.options) {
-    return <div>Loading...</div>;
+    return <div>This section will be available soon...</div>;
   }
   
   return (

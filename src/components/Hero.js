@@ -2,16 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import StarWrapper from '@/hoc/SectionWrapper'
 import { motion } from 'framer-motion'
-import { fadeIn } from '@/utils/motion'
+import { zoomIn } from '@/utils/motion'
 function Hero() {
   return (
     <motion.div
-    variants ={fadeIn("right","spring",0.5,1)}
+    variants ={zoomIn(1,0.3)}
     className='min-h-screen flex lg:items-start items-center justify-between font-poppins'>
     {/* Introduction */}
     <div className='flex flex-col my-3'>
       <h1 className=' py-3 font-extrabold text-tertiary font-anton'>Social Global <br className='hidden lg:flex' /> Problem</h1>
-      <p className='max-w-xl text-lg my-5 font-normal'>Welcome to Solving Social Global Problem! Our mission is to help individuals improve their psychological wellbeing through our research-backed intervention plan. <br/><br/> Whether you&apos;re looking to make lifestyle changes, improve your mental health, or strengthen your relationships, we&apos;re here to support you every step of the way. Contact us today to schedule a meeting and start your journey towards a happier, healthier life.</p>
+      <p className='max-w-xl text-lg my-5 font-normal'>Welcome to Solving Social Global Problem! Our mission is to help individuals improve their psychological wellbeing through our research-backed intervention plan. <br/><br/> Whether you&apos;re looking to make lifestyle changes, improve your mental health, or strengthen your relationships, we&apos;re here to support you every step of the way.</p>
 
     </div> 
     
