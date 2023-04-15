@@ -3,7 +3,7 @@ function Video({ youtube }) {
   return (
     <>
       <div className='flex flex-col justify-center items-center max-w-7xl min-h-screen'>
-        <h2 className='font-anton hidden text-5xl lg:flex justify-center items-center mx-auto text-tertiary '>Our Videos</h2>
+      <h2 className='font-anton flex justify-center items-center mx-auto text-tertiary py-10'>Our Video</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
           {youtube.map((Youtube) => (
             <div key={Youtube._key}>

@@ -12,12 +12,12 @@ function Blog({ posts }) {
   });
   const builder = imageUrlBuilder(client);
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
         {posts.map((arg) => {
           return (
             <Link href={"/research/" + arg.slug.current} key={arg.slug}>
-              <article class="overflow-hidden rounded-lg shadow-md transition hover:shadow-sm h-96">
+              <div class="overflow-hidden rounded-lg shadow-md transition hover:shadow-sm h-96 my-3">
                 <Image
                   src={builder.image(arg.mainImage).url()}
                   alt={arg.title}
@@ -31,7 +31,7 @@ function Blog({ posts }) {
                     datetime="2022-10-10"
                     class="block text-xs text-gray-500"
                   >
-                    10th Oct 2022
+                    {arg._createdAt}
                   </time>
 
                   <h3 class="mt-0.5 text-xl text-gray-900 font-poppins line-clamp-2">
@@ -42,7 +42,7 @@ function Blog({ posts }) {
                     {arg.metadesc}
                   </p>
                 </div>
-              </article>
+              </div>
             </Link>
           );
         })}
