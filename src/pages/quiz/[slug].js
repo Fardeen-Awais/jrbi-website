@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { createClient } from "@sanity/client";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const Quiz = ({ quiz }) => {
   console.log({quiz})
@@ -40,13 +39,13 @@ const Quiz = ({ quiz }) => {
 
         const percentage = (newScore / (quiz.quizzes.length * 10)) * 100;
         if (percentage <= 25) {
-          setFeedback("Poor");
+          setFeedback(`Poor`);
         } else if (percentage <= 50) {
-          setFeedback("Good");
+          setFeedback(`Good`);
         } else if (percentage <= 75) {
-          setFeedback("Excellent");
+          setFeedback(`Excellent`);
         } else {
-          setFeedback("Perfect");
+          setFeedback(`Perfect`);
         }
       }
     }
@@ -104,7 +103,7 @@ const Quiz = ({ quiz }) => {
                   question.options[userAnswers[index]].option
                 }`}</p>
               ) : (
-                <p>You didn't answer this question.</p>
+                <p>{`You didn't answer this question.`}</p>
               )}
             </div>
           ))}
@@ -126,6 +125,10 @@ export async function getServerSideProps(context) {
   });
   const quiz = await client.fetch(`*[_type == "assessment"][0]{
     quizzes,
+    poorFeedback,
+    goodFeedback,
+    excellentFeedback,
+    perfectFeedback
   }`);
   return {
     props: {
