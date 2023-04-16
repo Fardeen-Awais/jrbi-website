@@ -6,7 +6,7 @@ function Assesment({ asses }) {
   // console.log({asses})
   return (
     <>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 ">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-20">
       {asses.map((assessment) => (
         <Link  href={"/quiz/" + assessment.slug.current} key={assessment.slug}>
           <div className="relative flex items-center justify-between rounded-xl border border-gray-100 p-4 shadow-md hover:shadow-sm sm:p-6 lg:p-8 cursor-pointer">

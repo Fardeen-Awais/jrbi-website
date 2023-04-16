@@ -78,22 +78,24 @@ const Quiz = ({ quiz }) => {
   };
 
   return (
-    <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-[80px] mt-19 ">
+    <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-16 ">
       {!isSubmitted && (
         <div className="">
           <p>{quiz.quizzes[currentQuestionIndex].question}</p>
+
           {quiz.quizzes[currentQuestionIndex].options.map((option, index) => (
-            <label key={option._key}>
-              <input
-                type="radio"
-                name={`quiz-${currentQuestionIndex}`}
-                value={option.option}
-                checked={userAnswers[currentQuestionIndex] === index}
-                onChange={() => handleOptionChange(index)}
-              />
-              {option.option}
-            </label>
-          ))}
+    <button
+      key={option._key}
+      type="button"
+      name={`quiz-${currentQuestionIndex}`}
+      value={index}
+      onClick={() => handleOptionChange(index)}
+      className={`rounded-md px-4 py-2 text-sm font-poppins text-gray-800 focus:outline-none m-3 ${userAnswers[currentQuestionIndex] === index ? 'bg-pink-300' : 'bg-white-100 '}`}
+     >
+      {option.option}
+    </button>
+))}
+
           <button className="flex" onClick={handleNextQuestion}>
             Next
           </button>
@@ -133,7 +135,7 @@ const Quiz = ({ quiz }) => {
             Score: {score}/{quiz.quizzes.length * 10} Percentage:{" "}
             {userPercentage}%
           </p>
-          <p>Feedback: {feedback} </p>
+          <p className="text-lg m-5">Feedback: {feedback} </p>
         </div>
       )}
     </div>

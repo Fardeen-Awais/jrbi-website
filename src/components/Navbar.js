@@ -15,9 +15,9 @@ function Navbar() {
 
   return (
     <>
-      <header className="text-tertiary font-poppins relative top-0 py-1">
+      <header className="text-tertiary font-poppins relative top-0 p-5 lg:p-3 ">
         <nav
-          className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
+          className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between lg:px-8 hidden lg:flex`}
           aria-label="Global"
         >
           <Link href={'/'}>
