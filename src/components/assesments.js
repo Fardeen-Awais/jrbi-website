@@ -6,7 +6,6 @@ function Assesment({ asses }) {
   // console.log({asses})
   return (
     <>
-    <h2 className='font-anton text-5xl flex justify-center items-center mx-auto text-tertiary py-10'>Assesments</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 ">
       {asses.map((assessment) => (
         <Link  href={"/quiz/" + assessment.slug.current} key={assessment.slug}>

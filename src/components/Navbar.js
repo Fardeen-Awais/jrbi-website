@@ -15,7 +15,7 @@ function Navbar() {
 
   return (
     <>
-      <header className="text-tertiary font-poppins">
+      <header className="text-tertiary font-poppins relative top-0 py-1">
         <nav
           className={`mx-auto max-w-6xl ${styles.paddingX} items-center justify-between py-4 lg:px-8 hidden lg:flex`}
           aria-label="Global"
@@ -309,7 +309,7 @@ function Navbar() {
                     Blogs
                   </Link>
                   <Link
-                    href="/assesments"
+                    href="/assesment"
                     className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7 text-gray-900 hover:bg-gray-50"
                   >
                     Assesments

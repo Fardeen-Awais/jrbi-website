@@ -5,67 +5,88 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 const Quiz = ({ quiz }) => {
+  console.log({quiz})
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [feedback, setFeedback] = useState("");
 
-  const handleOptionChange = (questionIndex, selectedOptionIndex) => {
+  const handleOptionChange = (selectedOptionIndex) => {
     const newAnswers = [...userAnswers];
-    newAnswers[questionIndex] = selectedOptionIndex;
+    newAnswers[currentQuestionIndex] = selectedOptionIndex;
     setUserAnswers(newAnswers);
   };
 
-  useEffect(() => {
-    let newScore = 0;
-    quiz.quizzes.forEach((question, index) => {
-      const selectedOptionIndex = userAnswers[index];
-      if (selectedOptionIndex !== undefined && question.options[selectedOptionIndex].isCorrect) {
-        newScore += 10;
-      }
-    });
-    setScore(newScore);
-  }, [quiz, userAnswers]);
-
-  const handleSubmitQuiz = () => {
-    setIsSubmitted(true);
-    const percentage = (score / (quiz.quizzes.length * 10)) * 100;
-    if (percentage <= 25) {
-      setFeedback("Poor");
-    } else if (percentage <= 50) {
-      setFeedback("Good");
-    } else if (percentage <= 75) {
-      setFeedback("Excellent");
+  const handleNextQuestion = () => {
+    const nextIndex = currentQuestionIndex + 1;
+    if (nextIndex < quiz.quizzes.length) {
+      setCurrentQuestionIndex(nextIndex);
     } else {
-      setFeedback("Perfect");
+      const isAllAnswered = userAnswers.length === quiz.quizzes.length;
+      if (isAllAnswered) {
+        setIsSubmitted(true);
+        let newScore = 0;
+        quiz.quizzes.forEach((question, index) => {
+          const selectedOptionIndex = userAnswers[index];
+          if (
+            selectedOptionIndex !== undefined &&
+            question.options[selectedOptionIndex].isCorrect
+          ) {
+            newScore += 10;
+          }
+        });
+        setScore(newScore);
+
+        const percentage = (newScore / (quiz.quizzes.length * 10)) * 100;
+        if (percentage <= 25) {
+          setFeedback("Poor");
+        } else if (percentage <= 50) {
+          setFeedback("Good");
+        } else if (percentage <= 75) {
+          setFeedback("Excellent");
+        } else {
+          setFeedback("Perfect");
+        }
+      }
     }
   };
-
+  const hanldeBackQuestion = () => {
+    const backIndex = currentQuestionIndex - 1;
+    if (backIndex >= 0) {
+      setCurrentQuestionIndex(backIndex);
+    }
+  };
   return (
-    <div>
-      {!isSubmitted && quiz.quizzes.map((question, index) => (
-        <div key={question._key}>
-          <p>{question.question}</p>
-          {question.options.map((option, optionIndex) => (
+    <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-[80px] mt-19 ">
+      {!isSubmitted && (
+        <div className="">
+          <p>{quiz.quizzes[currentQuestionIndex].question}</p>
+          {quiz.quizzes[currentQuestionIndex].options.map((option, index) => (
             <label key={option._key}>
               <input
                 type="radio"
-                name={`quiz-${index}`}
+                name={`quiz-${currentQuestionIndex}`}
                 value={option.option}
-                checked={userAnswers[index] === optionIndex}
-                onChange={() => handleOptionChange(index, optionIndex)}
+                checked={userAnswers[currentQuestionIndex] === index}
+                onChange={() => handleOptionChange(index)}
               />
               {option.option}
             </label>
           ))}
+          <button className="flex" onClick={handleNextQuestion}>
+            Next
+          </button>
+          <button className="flex" onClick={hanldeBackQuestion}>
+            Back
+          </button>
         </div>
-      ))}
-      {!isSubmitted && <button onClick={handleSubmitQuiz}>Submit Quiz</button>}
+      )}
       {isSubmitted && (
-        <div>
+        <div className="">
           {quiz.quizzes.map((question, index) => (
-            <div key={question._key}>
-              <p>{question.question}</p>
+            <div className="" key={question._key}>
+              <p className="">{question.question}</p>
               {question.options.map((option, optionIndex) => (
                 <label key={option._key}>
                   <input
@@ -78,19 +99,24 @@ const Quiz = ({ quiz }) => {
                   {option.option}
                 </label>
               ))}
-              <p>{`Your answer: ${question.options[userAnswers[index]].option}`}</p>
+              {userAnswers[index] !== undefined ? (
+                <p>{`Your answer: ${
+                  question.options[userAnswers[index]].option
+                }`}</p>
+              ) : (
+                <p>You didn't answer this question.</p>
+              )}
             </div>
           ))}
-          <p>Score: {score}/{quiz.quizzes.length * 10}</p>
+          <p>
+            Score: {score}/{quiz.quizzes.length * 10}
+          </p>
           <p>Feedback: {feedback}</p>
         </div>
       )}
     </div>
   );
 };
-
-
-
 
 export async function getServerSideProps(context) {
   const client = createClient({
@@ -100,7 +126,7 @@ export async function getServerSideProps(context) {
   });
   const quiz = await client.fetch(`*[_type == "assessment"][0]{
     quizzes,
-  }`); 
+  }`);
   return {
     props: {
       quiz, //Return the fetch variable
@@ -109,4 +135,3 @@ export async function getServerSideProps(context) {
 }
 
 export default Quiz;
-
