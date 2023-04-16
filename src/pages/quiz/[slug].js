@@ -4,26 +4,30 @@ import { createClient } from "@sanity/client";
 import { useState } from "react";
 
 const Quiz = ({ quiz }) => {
-  console.log({quiz})
+  // States
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [feedback, setFeedback] = useState("");
+  const [userPercentage, setuserPercentage] = useState("");
 
+  // Options
   const handleOptionChange = (selectedOptionIndex) => {
     const newAnswers = [...userAnswers];
     newAnswers[currentQuestionIndex] = selectedOptionIndex;
     setUserAnswers(newAnswers);
   };
 
+  // Next question function
   const handleNextQuestion = () => {
     const nextIndex = currentQuestionIndex + 1;
     if (nextIndex < quiz.quizzes.length) {
       setCurrentQuestionIndex(nextIndex);
     } else {
-      const isAllAnswered = userAnswers.length === quiz.quizzes.length;
+      const isAllAnswered = userAnswers.length === quiz.quizzes.length; // check all the user filled the answered or not.
       if (isAllAnswered) {
+        // if all answered submit
         setIsSubmitted(true);
         let newScore = 0;
         quiz.quizzes.forEach((question, index) => {
@@ -35,27 +39,44 @@ const Quiz = ({ quiz }) => {
             newScore += 10;
           }
         });
-        setScore(newScore);
+        setScore(newScore); // Adding score
 
-        const percentage = (newScore / (quiz.quizzes.length * 10)) * 100;
+        // Getting Expert options
+        const feedbackValues = {
+          poor: quiz.poorFeedback,
+          good: quiz.goodFeedback,
+          excellent: quiz.excellentFeedback,
+          perfect: quiz.perfectFeedback,
+        };
+
+        const percentage = Math.floor(
+          (newScore / (quiz.quizzes.length * 10)) * 100
+        ); // Getting percentage of the score
         if (percentage <= 25) {
-          setFeedback(`Poor`);
+          setFeedback(`${feedbackValues.poor}`);
+          setuserPercentage(percentage);
         } else if (percentage <= 50) {
-          setFeedback(`Good`);
+          setFeedback(`${feedbackValues.good}`);
+          setuserPercentage(percentage);
         } else if (percentage <= 75) {
-          setFeedback(`Excellent`);
+          setFeedback(`${feedbackValues.excellent}`);
+          setuserPercentage(percentage);
         } else {
-          setFeedback(`Perfect`);
+          setFeedback(`${feedbackValues.perfect}`);
+          setuserPercentage(percentage);
         }
       }
     }
   };
+  // Back button Option
+
   const hanldeBackQuestion = () => {
     const backIndex = currentQuestionIndex - 1;
     if (backIndex >= 0) {
       setCurrentQuestionIndex(backIndex);
     }
   };
+
   return (
     <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-[80px] mt-19 ">
       {!isSubmitted && (
@@ -107,10 +128,12 @@ const Quiz = ({ quiz }) => {
               )}
             </div>
           ))}
-          <p>
-            Score: {score}/{quiz.quizzes.length * 10}
+
+          <p className="">
+            Score: {score}/{quiz.quizzes.length * 10} Percentage:{" "}
+            {userPercentage}%
           </p>
-          <p>Feedback: {feedback}</p>
+          <p>Feedback: {feedback} </p>
         </div>
       )}
     </div>
