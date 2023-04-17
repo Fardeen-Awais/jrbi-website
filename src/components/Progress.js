@@ -1,17 +1,17 @@
 import React from 'react'
 
-function Progress({ score,totalQuestion ,userPercentage, feedback , color}) {
-  console.table({score,userPercentage,feedback,totalQuestion , color})
+function Progress({ score,totalQuestion ,userPercentage, color}) {
+  console.log(color)
   return (
     <div>
-      <div class="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
-        <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-md rounded-2xl h-20"
+      <div className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
+        <div className="flex items-center flex-wrap max-w-md px-10 bg-white shadow-md rounded-2xl h-20"
            x-data="{ circumference: 50 * 2 * Math.PI, percent: 80 }"
            >
-              <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
-                <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+              <div className="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
+                <svg className="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
                   <circle
-                    class={`text-${color}-300`}
+                    className="text-gray-300"
                     stroke-width="10"
                     stroke="currentColor"
                     fill="transparent"
@@ -20,7 +20,7 @@ function Progress({ score,totalQuestion ,userPercentage, feedback , color}) {
                     cy="60"
                     />
                   <circle
-                    class={`text-${color}-600`}
+                    className={`text-${color}-600 `}
                     stroke-width="10"
                     stroke-dasharray="circumference"
                     stroke-dashoffset="circumference - percent / 100 * circumference"
@@ -32,21 +32,21 @@ function Progress({ score,totalQuestion ,userPercentage, feedback , color}) {
                     cy="60"
                    />
                 </svg>
-                <span class={`absolute text-2xl text-${color}-700`} x-text="`${percent}%`">{score}</span>
+                <span className={`absolute text-2xl text-${color}-600`} x-text="`${percent}%`">{score}</span>
               </div>
-              <p class="ml-10 font-medium text-gray-600 ">Out of</p>
+              <p className="ml-10 font-medium text-gray-600 ">Out of</p>
     
-              <span class={`mx-2 text-xl font-medium text-${color}-600 `}>{totalQuestion}</span>
+              <span className={`mx-2 text-xl font-medium text-${color}-600 `}>{totalQuestion}</span>
           </div>
         
         
-        <div class="flex items-center flex-wrap max-w-md px-10 bg-white shadow-md rounded-2xl h-20"
+        <div className="flex items-center flex-wrap max-w-md px-10 bg-white shadow-md rounded-2xl h-20"
            x-data="{ circumference: 50 * 2 * Math.PI, percent: 90 }"
            >
-              <div class="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
-                <svg class="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
+              <div className="flex items-center justify-center -m-6 overflow-hidden bg-white rounded-full">
+                <svg className="w-32 h-32 transform translate-x-1 translate-y-1" x-cloak aria-hidden="true">
                   <circle
-                    class="text-gray-300"
+                    className="text-gray-300"
                     stroke-width="10"
                     stroke="currentColor"
                     fill="transparent"
@@ -55,7 +55,7 @@ function Progress({ score,totalQuestion ,userPercentage, feedback , color}) {
                     cy="60"
                     />
                   <circle
-                    class={`text-${color}-600`}
+                    className={`text-${color}-600`}
                     stroke-width="10"
                     stroke-dasharray="circumference"
                     stroke-dashoffset="circumference - percent / 100 * circumference"
@@ -67,19 +67,19 @@ function Progress({ score,totalQuestion ,userPercentage, feedback , color}) {
                     cy="60"
                    />
                 </svg>
-                <span class={`absolute text-2xl text-${color}-700`} x-text="`${percent}%`">{userPercentage}%</span>
+                <span className={`absolute text-2xl text-${color}-600`} x-text="`${percent}%`">{userPercentage}%</span>
               </div>
-              <p class="ml-10 font-medium text-gray-600 sm:text-xl">Percentage</p>
+              <p className="ml-10 font-medium text-gray-600 sm:text-xl">Percentage</p>
           </div>
       </div>
-    <div class="fixed bottom-5 right-5 flex items-center space-x-4">
+    <div className="fixed bottom-5 right-5 flex items-center space-x-4">
       <div className='text-sm'>
       </div>
-      <a href="https://github.com/Kamona-WD" target="_blank" class="transition-transform transform hover:scale-125">
-        <span class="sr-only">Github</span>
+      <a href="https://github.com/Kamona-WD" target="_blank" className="transition-transform transform hover:scale-125">
+        <span className="sr-only">Github</span>
           <svg
              aria-hidden="true"
-             class="w-8 h-8 text-black"
+             className="w-8 h-8 text-black"
              fill="transparent"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 24 24"
