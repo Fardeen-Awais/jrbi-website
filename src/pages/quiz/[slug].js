@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { createClient } from "@sanity/client";
 import { useState } from "react";
+import Progress from "@/components/Progress";
 
 const Quiz = ({ quiz }) => {
   // States
@@ -11,6 +12,7 @@ const Quiz = ({ quiz }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [userPercentage, setuserPercentage] = useState("");
+  const [color, setcolor] = useState("");
 
   // Options
   const handleOptionChange = (selectedOptionIndex) => {
@@ -36,7 +38,7 @@ const Quiz = ({ quiz }) => {
             selectedOptionIndex !== undefined &&
             question.options[selectedOptionIndex].isCorrect
           ) {
-            newScore += 10;
+            newScore += 1;
           }
         });
         setScore(newScore); // Adding score
@@ -50,20 +52,24 @@ const Quiz = ({ quiz }) => {
         };
 
         const percentage = Math.floor(
-          (newScore / (quiz.quizzes.length * 10)) * 100
+          (newScore / (quiz.quizzes.length)) * 100
         ); // Getting percentage of the score
         if (percentage <= 25) {
           setFeedback(`${feedbackValues.poor}`);
           setuserPercentage(percentage);
+          setcolor('red')
         } else if (percentage <= 50) {
           setFeedback(`${feedbackValues.good}`);
           setuserPercentage(percentage);
+          setcolor('yellow')
         } else if (percentage <= 75) {
           setFeedback(`${feedbackValues.excellent}`);
           setuserPercentage(percentage);
+          setcolor('blue')
         } else {
           setFeedback(`${feedbackValues.perfect}`);
           setuserPercentage(percentage);
+          setcolor('green')
         }
       }
     }
@@ -83,8 +89,8 @@ const Quiz = ({ quiz }) => {
         className={`flex flex-col my-5 w-full ${isSubmitted ? "hidden" : ""}`}
       >
         <button className="flex my-4" onClick={hanldeBackQuestion}>
-                  Back
-                </button>
+          Back
+        </button>
         <p className="relative top-0 right-0 flex justify-start  font-semibold text-xl">{`${quiz.quizzes[currentQuestionIndex].question}`}</p>
         <p className="text-gray-500">Answer and get score </p>
         <p className="border-b border-black w-full my-5 py-2">{`Quiz ${[
@@ -114,52 +120,75 @@ const Quiz = ({ quiz }) => {
                   </button>
                 )
               )}
-              <div>
-              </div>
-              
-             
+              <div></div>
             </div>
-          <div className="flex w-full ">
-            <button className="flex justify-center items-center w-full md:w-72 mx-3  my-10 py-3 bg-black-200 text-white rounded-md " onClick={handleNextQuestion}>
-                  Next
-                </button>
-          </div>
+            <div className="flex w-full ">
+              <button
+                className="flex justify-center items-center w-full md:w-72 mx-3  my-10 py-3 bg-black-200 text-white rounded-md "
+                onClick={handleNextQuestion}
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       )}
-      
-      {isSubmitted && (
-        <div className="">
-          {quiz.quizzes.map((question, index) => (
-            <div className="" key={question._key}>
-              <p className="">{question.question}</p>
-              {question.options.map((option, optionIndex) => (
-                <label key={option._key}>
-                  <input
-                    type="radio"
-                    name={`quiz-${index}`}
-                    value={option.option}
-                    checked={userAnswers[index] === optionIndex}
-                    disabled
-                  />
-                  {option.option}
-                </label>
-              ))}
-              {userAnswers[index] !== undefined ? (
-                <p>{`Your answer: ${
-                  question.options[userAnswers[index]].option
-                }`}</p>
-              ) : (
-                <p>{`You didn't answer this question.`}</p>
-              )}
-            </div>
-          ))}
 
-          <p className="">
-            Score: {score}/{quiz.quizzes.length * 10} Percentage:{" "}
-            {userPercentage}%
-          </p>
-          <p className="text-lg m-5">Feedback: {feedback} </p>
+      {isSubmitted && (
+        // <div className="">
+        //   {quiz.quizzes.map((question, index) => (
+        //     <div className="" key={question._key}>
+        //       <p className="">{question.question}</p>
+        //       {question.options.map((option, optionIndex) => (
+        //         <label key={option._key}>
+        //           <input
+        //             type="radio"
+        //             name={`quiz-${index}`}
+        //             value={option.option}
+        //             checked={userAnswers[index] === optionIndex}
+        //             disabled
+        //           />
+        //           {option.option}
+        //         </label>
+        //       ))}
+        //       {userAnswers[index] !== undefined ? (
+        //         <p>{`Your answer: ${
+        //           question.options[userAnswers[index]].option
+        //         }`}</p>
+        //       ) : (
+        //         <p>{`You didn't answer this question.`}</p>
+        //       )}
+        //     </div>
+        //   ))}
+
+        //   <p className="">
+        //     Score: {score}/{quiz.quizzes.length * 10} Percentage:{" "}
+        //     {userPercentage}%
+        //   </p>
+        //   <p className="text-lg m-5">Feedback: {feedback} </p>
+        // </div>
+        <div className="flex flex-col justify-center items-center gap-14">
+          <h2 className="text-5xl ">Result</h2>
+          <div>
+            <Progress
+              score={score}
+              userPercentage={userPercentage}
+              feedback={feedback}
+              totalQuestion = {quiz.quizzes.length}
+              color = {color}
+            />
+          </div>
+          <div className="flex flex-col justify-center items-center my-5 max-w-xs bg-yellow-200 p-10 md:max-w-3xl font-poppins ">
+            <h3 className="text-2xl my-6 font-semibold text-tertiary ">
+              Expert FeedBack
+            </h3>
+            <p className="text-start max-w- md:text-start ">{feedback}</p>
+          </div>
+          <div className="flex flex-col justify-center items-center ">
+            <h3 className="text-2xl my-1">Resources</h3>
+            <div>Blogs</div>
+            <div>Videos</div>
+          </div>
         </div>
       )}
     </div>
