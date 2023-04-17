@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Progress({ score,totalQuestion ,userPercentage, color}) {
-  console.log(color)
+  console.log(typeof(color)) //string
+  console.log(color) // yellow - dynamic colors 
   return (
     <div>
       <div className="grid grid-cols-1 gap-20 lg:grid-cols-2 lg:gap-10">
@@ -20,7 +21,7 @@ function Progress({ score,totalQuestion ,userPercentage, color}) {
                     cy="60"
                     />
                   <circle
-                    className={`text-${color}-600 `}
+                    className={`text-${color}-600`}
                     stroke-width="10"
                     stroke-dasharray="circumference"
                     stroke-dashoffset="circumference - percent / 100 * circumference"

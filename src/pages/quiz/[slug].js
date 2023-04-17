@@ -12,7 +12,7 @@ const Quiz = ({ quiz }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [userPercentage, setuserPercentage] = useState("");
-  const [color, setcolor] = useState("");
+  const [color, setcolor] = useState();
 
   // Options
   const handleOptionChange = (selectedOptionIndex) => {
@@ -57,19 +57,19 @@ const Quiz = ({ quiz }) => {
         if (percentage <= 25) {
           setFeedback(`${feedbackValues.poor}`);
           setuserPercentage(percentage);
-          setcolor('red')
+          setcolor(`red`)
         } else if (percentage <= 50) {
           setFeedback(`${feedbackValues.good}`);
           setuserPercentage(percentage);
-          setcolor('yellow')
+          setcolor(`yellow`)
         } else if (percentage <= 75) {
           setFeedback(`${feedbackValues.excellent}`);
           setuserPercentage(percentage);
-          setcolor('blue')
+          setcolor(`blue`)
         } else {
           setFeedback(`${feedbackValues.perfect}`);
           setuserPercentage(percentage);
-          setcolor('green')
+          setcolor(`green`)
         }
       }
     }
