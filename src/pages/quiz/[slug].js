@@ -78,32 +78,56 @@ const Quiz = ({ quiz }) => {
   };
 
   return (
-    <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-16 ">
+    <div className="mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl m-16 flex flex-col justify-center items-center font-poppins">
+      <div
+        className={`flex flex-col my-5 w-full ${isSubmitted ? "hidden" : ""}`}
+      >
+        <button className="flex my-4" onClick={hanldeBackQuestion}>
+                  Back
+                </button>
+        <p className="relative top-0 right-0 flex justify-start  font-semibold text-xl">{`${quiz.quizzes[currentQuestionIndex].question}`}</p>
+        <p className="text-gray-500">Answer and get score </p>
+        <p className="border-b border-black w-full my-5 py-2">{`Quiz ${[
+          currentQuestionIndex + 1,
+        ]} of ${quiz.quizzes.length}`}</p>
+      </div>
+
       {!isSubmitted && (
-        <div className="">
-          <p>{quiz.quizzes[currentQuestionIndex].question}</p>
-
-          {quiz.quizzes[currentQuestionIndex].options.map((option, index) => (
-    <button
-      key={option._key}
-      type="button"
-      name={`quiz-${currentQuestionIndex}`}
-      value={index}
-      onClick={() => handleOptionChange(index)}
-      className={`rounded-md px-4 py-2 text-sm font-poppins text-gray-800 focus:outline-none m-3 ${userAnswers[currentQuestionIndex] === index ? 'bg-pink-300' : 'bg-white-100 '}`}
-     >
-      {option.option}
-    </button>
-))}
-
-          <button className="flex" onClick={handleNextQuestion}>
-            Next
-          </button>
-          <button className="flex" onClick={hanldeBackQuestion}>
-            Back
-          </button>
+        <div className="grid md:grid-cols-2 overflow-hidden ">
+          <div className="flex flex-col justify-center md:justify-center items-center">
+            <div className="grid md:grid-cols-2 gap-x-60 ">
+              {quiz.quizzes[currentQuestionIndex].options.map(
+                (option, index) => (
+                  <button
+                    key={option._key}
+                    type="button"
+                    name={`quiz-${currentQuestionIndex}`}
+                    value={index}
+                    onClick={() => handleOptionChange(index)}
+                    className={`rounded-md mx-3 md:mx-2 py-4 text-sm font-poppins outline outline-1 outline-gray-400 my-3 w-96 md:w-72 overflow-hidden  ${
+                      userAnswers[currentQuestionIndex] === index
+                        ? "bg-gradient-to-r from-green-300  to-green-400"
+                        : "bg-white "
+                    }`}
+                  >
+                    {option.option}
+                  </button>
+                )
+              )}
+              <div>
+              </div>
+              
+             
+            </div>
+          <div className="flex w-full ">
+            <button className="flex justify-center items-center w-full md:w-72 mx-3  my-10 py-3 bg-black-200 text-white rounded-md " onClick={handleNextQuestion}>
+                  Next
+                </button>
+          </div>
+          </div>
         </div>
       )}
+      
       {isSubmitted && (
         <div className="">
           {quiz.quizzes.map((question, index) => (
