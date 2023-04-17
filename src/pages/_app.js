@@ -15,7 +15,7 @@ const poppins = Poppins({
 })
 export default function App({ Component, pageProps }) {
   return (
-    <main className={` ${anton.variable} ${poppins.variable} font-sans `}>
+    <main className={` ${anton.variable} ${poppins.variable} font-sans`}>
       <Navbar/>
       <Component {...pageProps} />
     </main>

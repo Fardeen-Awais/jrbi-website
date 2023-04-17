@@ -12,7 +12,7 @@ const Quiz = ({ quiz }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [feedback, setFeedback] = useState("");
   const [userPercentage, setuserPercentage] = useState("");
-  const [color, setcolor] = useState();
+  const [color, setcolor] = useState("");
 
   // Options
   const handleOptionChange = (selectedOptionIndex) => {
@@ -57,19 +57,19 @@ const Quiz = ({ quiz }) => {
         if (percentage <= 25) {
           setFeedback(`${feedbackValues.poor}`);
           setuserPercentage(percentage);
-          setcolor(`red`)
+          setcolor("red")
         } else if (percentage <= 50) {
           setFeedback(`${feedbackValues.good}`);
           setuserPercentage(percentage);
-          setcolor(`yellow`)
+          setcolor("yellow")
         } else if (percentage <= 75) {
           setFeedback(`${feedbackValues.excellent}`);
           setuserPercentage(percentage);
-          setcolor(`blue`)
+          setcolor("blue")
         } else {
           setFeedback(`${feedbackValues.perfect}`);
           setuserPercentage(percentage);
-          setcolor(`green`)
+          setcolor("green")
         }
       }
     }
@@ -135,40 +135,8 @@ const Quiz = ({ quiz }) => {
       )}
 
       {isSubmitted && (
-        // <div className="">
-        //   {quiz.quizzes.map((question, index) => (
-        //     <div className="" key={question._key}>
-        //       <p className="">{question.question}</p>
-        //       {question.options.map((option, optionIndex) => (
-        //         <label key={option._key}>
-        //           <input
-        //             type="radio"
-        //             name={`quiz-${index}`}
-        //             value={option.option}
-        //             checked={userAnswers[index] === optionIndex}
-        //             disabled
-        //           />
-        //           {option.option}
-        //         </label>
-        //       ))}
-        //       {userAnswers[index] !== undefined ? (
-        //         <p>{`Your answer: ${
-        //           question.options[userAnswers[index]].option
-        //         }`}</p>
-        //       ) : (
-        //         <p>{`You didn't answer this question.`}</p>
-        //       )}
-        //     </div>
-        //   ))}
-
-        //   <p className="">
-        //     Score: {score}/{quiz.quizzes.length * 10} Percentage:{" "}
-        //     {userPercentage}%
-        //   </p>
-        //   <p className="text-lg m-5">Feedback: {feedback} </p>
-        // </div>
         <div className="flex flex-col justify-center items-center gap-14">
-          <h2 className="text-5xl ">Result</h2>
+          <h2 className="text-5xl font-semibold">Result</h2>
           <div>
             <Progress
               score={score}
