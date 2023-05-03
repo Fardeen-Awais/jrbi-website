@@ -36,7 +36,7 @@
   - Improving and remaking each component
   - Adding proper colors and fonts
   - Adding 3D model in the webpage
-  - Light theme and dark theme feature
+  - Light theme and dark theme feature - [x]
   
 - Login and Logout features - []
 - Manage Database - []

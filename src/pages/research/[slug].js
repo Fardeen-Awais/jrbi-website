@@ -64,7 +64,7 @@ const Post = ({ blog }) => {
           height={400}
           className="h-48 lg:h-96 md:72 w-full object-cover transition-transform duration-200 ease-in-out center group-hover:scale-105"
         />
-        <article className="prose mx-auto max-w-7xl flex justify-center items-center prose-headings:text-tertiary prose-headings:font-poppins prose-p:font-poppins dark:text-white">
+        <article className="prose mx-auto max-w-7xl flex justify-center items-center dark:text-white prose-headings:dark:text-white prose-headings:tracking-wide">
           <PortableText content={blog.body} />
         </article>
       </div>
