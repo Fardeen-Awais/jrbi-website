@@ -8,6 +8,7 @@ import Whocanjoin from "@/components/Whocanjoin";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
 import { Trusted } from "@/components/Trusted";
+import Subscribe from "@/components/Subscribe";
 
 export default function Home({posts,youtube,asses}) {
   const firstThreePosts = posts.slice(0, 3);
@@ -21,7 +22,7 @@ export default function Home({posts,youtube,asses}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div class="relative overflow-x-hidden prose-h2:text-6xl prose-h1:text-7xl prose-h3:text-tertiary prose-h2:leading-normal prose-p:font-poppins">
+        <div class="relative overflow-x-hidden">
           <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0 " />
           <Hero />
           <Service />
@@ -31,6 +32,7 @@ export default function Home({posts,youtube,asses}) {
           <Assesments asses={asses}/>
           <Trusted/>
           <Contact/>
+          <Subscribe/>
         </div>
       </main>
     </>

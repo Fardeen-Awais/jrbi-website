@@ -30,7 +30,21 @@
 
 250$ charges in that steps.
 
-- Assessments Page and Section - []
+- Assessments Page and Section - [x]
+- Email service - [x]
+- UI improving - []
+  - Improving and remaking each component
+  - Adding proper colors and fonts
+  - Adding 3D model in the webpage
+  - Light theme and dark theme feature
+  
 - Login and Logout features - []
 - Manage Database - []
+  - It includes manage clients data and login details.
+  - Clients information about each question.
+  - Statistics report about each question that public answered
+- Ai Chat bot assistant - []
+  - Help you to assist your problem
+  - Suggested you some solutions
+
 

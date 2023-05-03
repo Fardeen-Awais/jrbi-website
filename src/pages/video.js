@@ -3,7 +3,7 @@ import Video from '@/components/Video'
 import { createClient } from '@sanity/client';
 export default function video({ youtube }) {
     return (
-        <div className='my-20 md:my-10'>
+        <div className=''>
             <Video youtube={youtube} />
         </div>
     )

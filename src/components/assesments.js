@@ -1,15 +1,16 @@
 import React from 'react'
 import Link from "next/link";
 import Image from 'next/image';
-
+import { motion } from 'framer-motion';
+import { fadeIn } from '@/utils/motion';
 function Assesment({ asses }) {
   // console.log({asses})
   return (
-    <>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-20">
+    <div className="min-h-screen py-10">
+    <motion.div variants ={fadeIn('right','spring',0.8,0.5)} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10 ">
       {asses.map((assessment) => (
         <Link  href={"/quiz/" + assessment.slug.current} key={assessment.slug}>
-          <div className="relative flex items-center justify-between rounded-xl border border-gray-100 p-4 shadow-md hover:shadow-sm sm:p-6 lg:p-8 cursor-pointer">
+          <div className="relative flex items-center justify-between rounded-xl border border-gray-100 p-4 shadow-md hover:shadow-sm sm:p-6 lg:p-8 cursor-pointer bg-white">
             <div className="pt-4 text-gray-500">
               <svg
                 className="h-8 w-8 sm:h-10 sm:w-10"
@@ -43,8 +44,8 @@ function Assesment({ asses }) {
           </div>
         </Link>
       ))}
+    </motion.div>
     </div>
-    </>
   )
 }
 export default Assesment

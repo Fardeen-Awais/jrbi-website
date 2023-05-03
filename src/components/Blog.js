@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
-import { fadeIn, zoomIn } from "@/utils/motion";
+import { fadeIn} from "@/utils/motion";
 import { motion } from "framer-motion";
 function Blog({ posts }) {
   const client = createClient({
@@ -14,11 +14,11 @@ function Blog({ posts }) {
   const builder = imageUrlBuilder(client);
   return (
     <div className="min-h-screen py-10">
-      <motion.div variants ={fadeIn('right','spring',0.8,0.5)} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
+      <motion.div variants ={fadeIn('right','spring',0.8,0.5)} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10 " >
         {posts.map((arg) => {
           return (
             <Link href={"/research/" + arg.slug.current} key={arg.slug}>
-              <div class="overflow-hidden rounded-lg shadow-md transition hover:shadow-sm h-96 my-3">
+              <div class="overflow-hidden rounded-lg shadow-md transition hover:shadow-sm h-96 my-3 bg-white  text-tertiary">
                 <Image
                   src={builder.image(arg.mainImage).url()}
                   alt={arg.title}
@@ -35,11 +35,11 @@ function Blog({ posts }) {
                     {arg._createdAt}
                   </time>
 
-                  <h3 class="mt-0.5 text-xl text-tertiary font-poppins line-clamp-2">
+                  <h3 class="mt-0.5 text-xl  font-poppins  line-clamp-2">
                     {arg.title}
                   </h3>
 
-                  <p class="mt-2 text-sm leading-relaxed text-gray-500 line-clamp-3">
+                  <p class="mt-2 text-sm font-light leading-relaxed  line-clamp-3">
                     {arg.metadesc}
                   </p>
                  

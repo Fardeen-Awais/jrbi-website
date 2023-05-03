@@ -1,13 +1,12 @@
 import React from 'react'
 import Assesments from '@/components/assesments'
 import { createClient } from '@sanity/client';
-import Progress from '@/components/Progress';
 
 const assesment = ({asses}) => {
   return (
     <div>
       <Assesments asses={asses}/>
-      </div>
+    </div>
   )
 }
 export async function getServerSideProps(context) {

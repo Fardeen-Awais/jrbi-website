@@ -1,16 +1,11 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url"
 import Blog from "@/components/Blog";
 
 function Blogs({ posts }) {
- 
   return (
     <>
-     
-    <Blog posts={posts}/>
+      <Blog posts={posts} />
     </>
   );
 }

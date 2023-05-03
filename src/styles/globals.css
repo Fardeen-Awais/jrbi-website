@@ -19,6 +19,10 @@
   display: block;
 }
 
+:root {
+  --icon-color: white;
+}
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
