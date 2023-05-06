@@ -10,8 +10,9 @@ function Hero() {
     <motion.div
     variants ={fadeIn('up','spring',0.3,0.5)}
     className='min-h-screen flex flex-col  lg:items-start items-center justify-between font-poppins'>
-      <div><p>Hello, I'm here to help you</p></div>
-     <BrainCanvas/> {/* We will add model later */}
+      <div className='bg-black'><p>Hello, I'm here to help you</p></div>
+     {/* <BrainCanvas/> */}
+      {/* We will add model later */}
     
     </motion.div>
   )
