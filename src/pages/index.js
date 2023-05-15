@@ -4,11 +4,12 @@ import Service from "@/components/Service";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact"
 import { createClient } from "@sanity/client";
-import Whocanjoin from "@/components/Whocanjoin";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
 import { Trusted } from "@/components/Trusted";
 import Subscribe from "@/components/Subscribe";
+import Ourteam from "@/components/Ourteam";
+import Chat from "@/components/Chat";
 
 export default function Home({posts,youtube,asses}) {
   const firstThreePosts = posts.slice(0, 3);
@@ -26,11 +27,12 @@ export default function Home({posts,youtube,asses}) {
           <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0 " />
           <Hero />
           <Service />
-          <Whocanjoin/>
+          <Chat/> {/* Appointment ask question get answers get some quizzes get email and do meeting.  */}
           <Blog posts={firstThreePosts}/>
           <Video youtube={firstThreeVideo}/>
-          <Assesments asses={asses}/>
+          <Assesments asses={asses}/> {/* Test yourself with expert maked quiz Section */}
           <Trusted/>
+          <Ourteam/>
           <Contact/>
           <Subscribe/>
         </div>

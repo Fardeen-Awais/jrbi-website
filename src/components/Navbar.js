@@ -39,19 +39,16 @@ function Navbar() {
     <>
       <header className="font-poppins relative top-0 p-5 lg:p-3 ">
         <nav
-          className={`mx-auto max-w-6xl items-center justify-between gap-x-10 hidden lg:flex px-6`}
+          className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex`}
           aria-label="Global"
         >
-          
-            <motion.div
-              variants={fadeIn("up", "spring", 3, 5)}
-              className="flex"
-            >
-              <Link href={"/"}><h3 className="font-anton text-3xl flex justify-center items-center py-3 cursor-pointer ">
-                Jrbi
+          <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
+            <Link href={"/"}>
+              <h3 className="font-anton text-4xl flex justify-center items-center py-3 cursor-pointer ">
+                Jr.
               </h3>
-          </Link>
-            </motion.div>
+            </Link>
+          </motion.div>
           {/* Options for product   */}
           <div className="hidden lg:flex lg:space-x-16 justify-center items-center  ">
             <div className="relative">
@@ -268,7 +265,9 @@ function Navbar() {
         <div role="dialog" aria-modal="true">
           <div
             className={`${
-              !toggle ? "dark:bg-tertiary" : "bg-white min-h-screen text-gray-900"
+              !toggle
+                ? "dark:bg-tertiary"
+                : "bg-white min-h-screen text-gray-900"
             } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}
           >
             <div className="flex items-center justify-between ">
@@ -285,7 +284,7 @@ function Navbar() {
                 onClick={() => setToggle(!toggle)}
               >
                 {toggle ? (
-                 <svg
+                  <svg
                     className="h-6 w-6"
                     fill="white"
                     viewBox="0 0 24 24"
@@ -306,7 +305,6 @@ function Navbar() {
                     viewBox="0 96 960 960"
                     width="24"
                     fill={theme === "light" ? "black" : "white"}
-                    
                   >
                     <path d="M165.5 819.087q-17.652 0-30.326-12.674T122.5 776.087q0-17.652 12.674-30.326t30.326-12.674h630q17.652 0 30.326 12.674t12.674 30.326q0 17.652-12.674 30.326T795.5 819.087h-630Zm0-200.587q-17.652 0-30.326-12.674T122.5 575.5q0-17.652 12.674-30.326T165.5 532.5h630q17.652 0 30.326 12.674T838.5 575.5q0 17.652-12.674 30.326T795.5 618.5h-630Zm0-199.587q-17.652 0-30.326-12.674T122.5 375.913q0-17.652 12.674-30.326t30.326-12.674h630q17.652 0 30.326 12.674t12.674 30.326q0 17.652-12.674 30.326T795.5 418.913h-630Z" />
                   </svg>
@@ -314,120 +312,120 @@ function Navbar() {
               </button>
             </div>
             <div className={`${!toggle ? "hidden" : "flex "} mt-6 flow-root `}>
-                <div className="space-y-2 py-6">
-                  <div className="-mx-3 ">
-                    <button
-                      type="button"
-                      className="flex w-full items-center  justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7 "
-                      aria-controls="disclosure-1"
-                      aria-expanded="false"
-                      onClick={() => setDropdown(!dropdown)}
-                    >
-                      Menu
-                      <svg
-                        className="h-5 w-5 flex-none dark:text-white"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                          clip-rule="evenodd"
-                        />
-                      </svg>
-                    </button>
-
-                    <div
-                      id="disclosure-1"
-                      className={`${!dropdown ? "hidden" : "flex flex-col"} `}
-                    >
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Our Service
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Who can join us
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Interactive Blogs
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Our videos
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Research
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Contact us
-                      </Link>
-
-                      <Link
-                        href="#"
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
-                      >
-                        Our Team
-                      </Link>
-                    </div>
-                  </div>
-                  <Link
-                    href="/blogs"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
-                  >
-                    Blogs
-                  </Link>
-                  <Link
-                    href="/assesment"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
-                  >
-                    Assesments
-                  </Link>
-                  <Link
-                    href="/video"
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
-                  >
-                    Video
-                  </Link>
-                </div>
-                <div className="py-6">
-                  <Link
-                    href="#"
-                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100"
-                  >
-                    Log in
-                  </Link>
-                </div>
-                <div className="flex items-center justify-end flex-col-reverse gap-x-4">
+              <div className="space-y-2 py-6">
+                <div className="-mx-3 ">
                   <button
                     type="button"
-                    onClick={handleThemeSwitch}
-                    className="relative gap-x-8 h-8 w-8 dark:bg-white-100 bg-black-200 p-1 rounded-full"
+                    className="flex w-full items-center  justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-medium leading-7 "
+                    aria-controls="disclosure-1"
+                    aria-expanded="false"
+                    onClick={() => setDropdown(!dropdown)}
                   >
-                    {theme === "dark" ? "🌞" : "🌙"}
+                    Menu
+                    <svg
+                      className="h-5 w-5 flex-none dark:text-white"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
                   </button>
+
+                  <div
+                    id="disclosure-1"
+                    className={`${!dropdown ? "hidden" : "flex flex-col"} `}
+                  >
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Our Service
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Who can join us
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Interactive Blogs
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Our videos
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Research
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Contact us
+                    </Link>
+
+                    <Link
+                      href="#"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                    >
+                      Our Team
+                    </Link>
+                  </div>
                 </div>
+                <Link
+                  href="/blogs"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                >
+                  Blogs
+                </Link>
+                <Link
+                  href="/assesment"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                >
+                  Assesments
+                </Link>
+                <Link
+                  href="/video"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                >
+                  Video
+                </Link>
+              </div>
+              <div className="py-6">
+                <Link
+                  href="#"
+                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100"
+                >
+                  Log in
+                </Link>
+              </div>
+              <div className="flex items-center justify-end flex-col-reverse gap-x-4">
+                <button
+                  type="button"
+                  onClick={handleThemeSwitch}
+                  className="relative gap-x-8 h-8 w-8 dark:bg-white-100 bg-black-200 p-1 rounded-full"
+                >
+                  {theme === "dark" ? "🌞" : "🌙"}
+                </button>
+              </div>
             </div>
           </div>
         </div>

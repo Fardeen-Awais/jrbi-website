@@ -1,0 +1,11 @@
+Model Information:
+* title:	Red Blood Cells
+* source:	https://sketchfab.com/3d-models/red-blood-cells-c3f0295dca6244e286a0b21999c2d0ce
+* author:	AK (https://sketchfab.com/skaf13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Red Blood Cells" (https://sketchfab.com/3d-models/red-blood-cells-c3f0295dca6244e286a0b21999c2d0ce) by AK (https://sketchfab.com/skaf13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

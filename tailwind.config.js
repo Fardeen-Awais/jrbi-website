@@ -14,15 +14,20 @@ module.exports = {
     extend: {
       fontFamily: {
         anton: ['var(--font-anton)', ...fontFamily.sans],
-        poppins: ['var(--font-poppins)', ...fontFamily.sans]
+        poppins: ['var(--font-poppins)', ...fontFamily.sans],        
+        montserrat: ['--font-montserrat', ...fontFamily.sans]
       },
       colors: {
-        primary: "#f3c6c0",
-        secondary: "#f8e4e3",
-        tertiary: "#151030",
+        primary:"0152a8",
+        secondary:"dcedfe",
+        darkprimary: "#f3c6c0",
+        darksecondary: "#f8e4e3",
+        darktertiary: "#151030",
         "black-100": "#100d25",
         "black-200": "#090325",
+        "black-300": "143450",
         "white-100": "#f3f3f3",
+        "white-100": "#f1f1f1",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

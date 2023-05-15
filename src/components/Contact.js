@@ -48,7 +48,7 @@ function Contact() {
         <div className="flex flex-col justify-center items-center mx-auto max-w-6xl p-10 gap-y-7">
           <div class="mx-auto max-w-2xl text-center">
             <h2 >
-              Contact sales
+              Email Us
             </h2>
           </div>
           <form onSubmit={handleSubmit} class="mx-auto ">
