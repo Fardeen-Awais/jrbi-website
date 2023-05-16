@@ -12,7 +12,7 @@ const Login = () => {
       {!session ? (
         <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} theme="light" />
       ) : (
-        <Account session={session} />
+        <h3 className='text-3xl justify-center items-center flex font-poppins font-semibold'>Thanks for Login</h3>
       )}
     </div>
   )
