@@ -13,8 +13,9 @@ function Hero() {
           transition={{ duration: 1 }}
           className="absolute z-10 top-0 left-0 bg-black dark:bg-white-100 "
         />
-        <h1 className="font-anton text-7xl md:text-8xl">
-          MAKE YOU HEALTH BETTER <br /> WILL MAKE US BETTER
+        <h1 className="font-anton text-7xl md:text-3xl max-w-sm">
+        <div>MAKE YOU HEALTH BETTER</div>
+  <div>WILL MAKE US BETTER</div>
         </h1>
         <motion.div />
       </div>
