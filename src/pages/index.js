@@ -1,8 +1,8 @@
-import Head from "next/head"; // styles.paddingX idhar sai ai ha
+import Head from "next/head";
 import Hero from "@/components/Hero";
 import Service from "@/components/Service";
 import Blog from "@/components/Blog";
-import Contact from "@/components/Contact"
+import Contact from "@/components/Contact";
 import { createClient } from "@sanity/client";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
@@ -11,9 +11,9 @@ import Subscribe from "@/components/Subscribe";
 import Ourteam from "@/components/Ourteam";
 import Chat from "@/components/Chat";
 
-export default function Home({posts,youtube,asses}) {
+export default function Home({ posts, youtube, asses }) {
   const firstThreePosts = posts.slice(0, 3);
-  const firstThreeVideo = youtube.slice(0,3)
+  const firstThreeVideo = youtube.slice(0, 3);
   return (
     <>
       <Head>
@@ -27,14 +27,16 @@ export default function Home({posts,youtube,asses}) {
           <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0 " />
           <Hero />
           <Service />
-          <Chat/> {/* Appointment ask question get answers get some quizzes get email and do meeting.  */}
-          <Blog posts={firstThreePosts}/>
-          <Video youtube={firstThreeVideo}/>
-          <Assesments asses={asses}/> {/* Test yourself with expert maked quiz Section */}
-          <Trusted/>
-          <Ourteam/>
-          <Contact/>
-          <Subscribe/>
+          <Chat />{" "}
+          {/* Appointment ask question get answers get some quizzes get email and do meeting.  */}
+          <Assesments asses={asses} />{" "}
+          {/* Test yourself with expert maked quiz Section */}
+          {/* <Trusted/> */}
+          <Blog posts={firstThreePosts} />
+          <Video youtube={firstThreeVideo} />
+          {/* <Ourteam/> */}
+          <Contact />
+          {/* <Subscribe/> */}
         </div>
       </main>
     </>
@@ -56,7 +58,7 @@ export async function getServerSideProps(context) {
       posts, //Return the fetch variable
       author,
       youtube,
-      asses
+      asses,
     },
   };
 }

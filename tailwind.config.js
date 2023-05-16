@@ -25,9 +25,9 @@ module.exports = {
         darktertiary: "#151030",
         "black-100": "#100d25",
         "black-200": "#090325",
-        "black-300": "143450",
+        "black-300": "#143450",
         "white-100": "#f3f3f3",
-        "white-100": "#f1f1f1",
+        "white-200": "#f1f1f1",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

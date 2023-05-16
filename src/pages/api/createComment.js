@@ -6,7 +6,6 @@ const config = {
   useCdn: process.env.NODE_ENV === 'production',
   token: process.env.SANITY_API_TOKEN,
 }
-console.log(config)
 const client = createClient(config);
 
 export default async function createComment(req, res) {

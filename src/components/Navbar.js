@@ -5,7 +5,12 @@ import { styles } from "@/styles/styles";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
 import { useEffect } from "react";
+import { useSession, useUser , useSupabaseClient} from '@supabase/auth-helpers-react'
 function Navbar() {
+  const session = useSession()
+  const user = useUser()
+  const supabase = useSupabaseClient()
+
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -37,9 +42,9 @@ function Navbar() {
 
   return (
     <>
-      <header className="font-poppins relative top-0 p-5 lg:p-3 ">
+      <header className="font-poppins relative top-0 p-5 lg:p-3 bg-white-100 dark:bg-black-100">
         <nav
-          className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex`}
+          className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex `}
           aria-label="Global"
         >
           <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
@@ -245,19 +250,25 @@ function Navbar() {
                 {theme === "dark" ? "🌞" : "🌙"}
               </button>
             </div>
-            <Link href="/" className="text-sm font-semibold leading-6">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="38"
-                viewBox="0 96 960 960"
-                width="38"
-              >
-                <path
-                  d="M489 936v-60h291V276H489v-60h291q24 0 42 18t18 42v600q0 24-18 42t-42 18H489Zm-78-185-43-43 102-102H120v-60h348L366 444l43-43 176 176-174 174Z"
-                  fill={theme === "light" ? "black" : "white"}
-                />
-              </svg>
-            </Link>
+            {!session ? (
+        <Link href="/login" className="text-sm font-semibold leading-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="38"
+            viewBox="0 96 960 960"
+            width="38"
+          >
+            <path
+              d="M489 936v-60h291V276H489v-60h291q24 0 42 18t18 42v600q0 24-18 42t-42 18H489Zm-78-185-43-43 102-102H120v-60h348L366 444l43-43 176 176-174 174Z"
+              fill={theme === "light" ? "black" : "white"}
+            />
+          </svg>
+        </Link>
+      ):(
+        <div className="profile">
+          <img onClick={() => supabase.auth.signOut()} title="Click here to logout"  src={user.user_metadata.avatar_url} className="w-10 h-10 rounded-full" id="avatar"  alt="User Avatar" />
+        </div>
+      ) }
           </div>
         </nav>
 
@@ -267,8 +278,8 @@ function Navbar() {
             className={`${
               !toggle
                 ? "dark:bg-tertiary"
-                : "bg-white min-h-screen text-gray-900"
-            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 py-4  lg:ring-1 lg:ring-gray-900/10 top-0 `}
+                : "bg-white-100 min-h-screen text-gray-900"
+            } flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6   lg:ring-1 lg:ring-gray-900/10 top-0 h-10`}
           >
             <div className="flex items-center justify-between ">
               <div className="flex cursor-pointer">
@@ -311,7 +322,7 @@ function Navbar() {
                 )}
               </button>
             </div>
-            <div className={`${!toggle ? "hidden" : "flex "} mt-6 flow-root `}>
+            <div className={`${!toggle ? "hidden" : "flex "}  flow-root `}>
               <div className="space-y-2 py-6">
                 <div className="-mx-3 ">
                   <button

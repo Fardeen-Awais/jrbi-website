@@ -46,11 +46,10 @@ function Contact() {
         </div>
       ) : (
         <div className="flex flex-col justify-center items-center mx-auto max-w-6xl p-10 gap-y-7">
-          <div class="mx-auto max-w-2xl text-center">
-            <h2 >
-              Email Us
-            </h2>
-          </div>
+           <div className="flex flex-col justify-center items-center my-10 ">
+        <h2 className=" border-2 border-gray-600 p-2 ">Our Blogs</h2>
+        <p className="py-4 text-xl">Read some research based articles</p>
+      </div>
           <form onSubmit={handleSubmit} class="mx-auto ">
             <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div class="sm:col-span-2">
@@ -58,7 +57,7 @@ function Contact() {
                   for="company"
                   class="block text-sm font-semibold leading-6 "
                 >
-                  Company
+                  Name
                 </label>
                 <div class="mt-2.5">
                   <input
@@ -120,7 +119,7 @@ function Contact() {
             <div class="mt-10">
               <button
                 type="submit"
-                class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                class="block w-full rounded-md bg-black-200 px-3.5 py-2.5 text-center text-sm font-semibold text-white-200 shadow-sm hover:bg-black-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-200"
               >
                 Submit
               </button>

@@ -1,11 +1,18 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { fadeIn } from '@/utils/motion'
+import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
 function Video({ youtube }) {
   return (
     <>
-       <div className="min-h-screen py-10">
-      <motion.div variants ={fadeIn('right','spring',0.8,0.5)} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10">
+      <div className="min-h-screen py-10 max-w-6xl mx-auto p-3">
+        <div className="flex flex-col justify-center items-center my-10 ">
+          <h2 className=" border-2 border-gray-600 p-2 ">Our Videos</h2>
+          <p className="py-4 text-xl">Let's see some videos 📽</p>
+        </div>
+        <motion.div
+          variants={fadeIn("right", "spring", 0.8, 0.5)}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6  md:p-6 py-10 mx-auto"
+        >
           {youtube.map((Youtube) => (
             <div key={Youtube._key}>
               <iframe
@@ -21,7 +28,7 @@ function Video({ youtube }) {
         </motion.div>
       </div>
     </>
-  )
+  );
 }
 
-export default Video
+export default Video;

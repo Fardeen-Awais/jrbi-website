@@ -5,7 +5,7 @@ import Room from "./Doctors_room";
 
 function Hero() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <div className="relative py-5">
         <motion.div
           initial={{ width: "50%" }}
