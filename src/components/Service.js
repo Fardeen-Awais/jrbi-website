@@ -7,7 +7,7 @@ const services = [
     title: "Individual Therapy",
     src: `/icons/ServicesIcon/individual_icon.svg`,
     description:
-      "Individual therapy provides a safe and supportive environment to work through personal challenges and to build self-awareness and insight.",
+      "Individual therapy provides a safe and supportive environment to work through personal challenges and to build selfawareness and insight.",
   },
   {
     id: 2,
