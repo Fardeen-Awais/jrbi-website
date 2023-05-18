@@ -110,7 +110,7 @@ const Quiz = ({ quiz }) => {
                     name={`quiz-${currentQuestionIndex}`}
                     value={index}
                     onClick={() => handleOptionChange(index)}
-                    className={`rounded-md mx-3 md:mx-2 py-4 text-sm font-poppins outline outline-1 outline-gray-400 my-3 w-96 md:w-72 overflow-hidden  ${
+                    className={`rounded-md mx-3 md:mx-2 py-4 text-sm font-poppins outline outline-1 outline-gray-400 my-3 w-72 overflow-hidden  ${
                       userAnswers[currentQuestionIndex] === index
                         ? "bg-gradient-to-r from-green-300  to-green-400"
                         : "bg-white "
@@ -120,7 +120,7 @@ const Quiz = ({ quiz }) => {
                   </button>
                 )
               )}
-              <div></div>
+              
             </div>
             <div className="flex w-full ">
               <button
