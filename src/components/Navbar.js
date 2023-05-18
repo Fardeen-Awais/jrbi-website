@@ -279,7 +279,7 @@ function Navbar() {
               !toggle
                 ? "dark:bg-tertiary"
                 : "bg-white-100 dark:bg-black min-h-screen text-gray-900 dark:text-white"
-            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10`}
+            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 py-1`}
           >
             <div className="flex items-center justify-between ">
               <div className="flex cursor-pointer">
@@ -421,12 +421,19 @@ function Navbar() {
                 </Link>
               </div>
               <div className="py-6">
-                <Link
-                  href="#"
+              {!session ? (<Link
+                  href="/login"
                   className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100 dark:hover:bg-darktertiary"
                 >
                   Log in
-                </Link>
+                </Link>)
+                :(
+                  <div>
+                <p>Hi {user.user_metadata.full_name}</p>
+                <p className="text-center py-2 font-semibold cursor-pointer">Logout</p>
+                </div>
+                )}
+                
               </div>
               <div className="flex items-center justify-end flex-col-reverse gap-x-4">
                 <button
