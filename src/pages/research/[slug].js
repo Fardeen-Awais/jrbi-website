@@ -64,7 +64,7 @@ const Post = ({ blog }) => {
           height={400}
           className="h-48 lg:h-96 md:72 w-full object-cover transition-transform duration-200 ease-in-out center group-hover:scale-105"
         />
-        <article className="prose mx-auto max-w-7xl flex justify-center items-center dark:text-white prose-headings:dark:text-white prose-headings:tracking-wide">
+        <article className="prose mx-auto max-w-7xl flex justify-center items-center dark:text-white dark:prose-code:text-white-100 dark:prose-blockquote:text-white-100 prose-headings:dark:text-white prose-headings:tracking-wide">
           <PortableText content={blog.body} />
         </article>
       </div>
@@ -76,7 +76,7 @@ const Post = ({ blog }) => {
         </h4>
         {blog.comments.map((comment) => (
           <div key={comment._id} className="flex justify-center">
-            <span className="text-yellow-500 font-bold px-1">
+            <span className="text-darktertiary dark:text-indigo-500 font-bold px-1">
               {comment.name}:
             </span>
             <p>{comment.comment}</p>
@@ -102,28 +102,28 @@ const Post = ({ blog }) => {
             value={blog._id}
           />
           <label className="block mb-5 px-4">
-            <span className="px-2 text-gray-700">Name</span>
+            <span className="px-2 text-gray-700 dark:text-gray-500">Name</span>
             <input
               {...register("name", { required: true })}
               type="text"
-              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block w-[90vw] sm:w-full ring-yellow-500 outline-none focus:ring"
+              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block w-[90vw] sm:w-full ring-white-200 outline-none focus:ring text-gray-800"
               placeholder="Joe Root"
             />
           </label>
           <label className="block mb-5 px-4">
-            <span className="px-2 text-gray-700">Email</span>
+            <span className="px-2 text-gray-700 dark:text-gray-500">Email</span>
             <input
               {...register("email", { required: true })}
               type="email"
-              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block  ring-yellow-500  outline-none focus:ring w-[90vw] sm:w-full"
+              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block  ring-white-200 outline-none focus:ring w-[90vw] sm:w-full text-gray-800"
               placeholder="@youremail.com"
             />
           </label>
           <label className="block mb-5 px-4">
-            <span className="px-2 text-gray-700">Comment</span>
+            <span className="px-2 text-gray-700 dark:text-gray-500">Comment</span>
             <textarea
               {...register("comment", { required: true })}
-              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block w-[90vw] sm:w-full  ring-yellow-500 outline-none focus:ring"
+              className="shadow border rounded mx-1 py-2 px-3 form-input mt-1 block w-[90vw] sm:w-full  ring-white-200 outline-none focus:ring text-gray-800"
               placeholder="Express YourSelf"
               rows={8}
             />
@@ -144,7 +144,7 @@ const Post = ({ blog }) => {
           </div>
           <input
             type="submit"
-            className="shadow bg-yellow-500 hover:bg-yellow-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 mx-auto rounded cursor-pointer w-[20vw]"
+            className="shadow bg-gray-800 hover:bg-gray-700 dark:bg-indigo-500 dark:hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 mx-auto rounded cursor-pointer w-[200px] "
           />
         </form>
       )}

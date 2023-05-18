@@ -100,7 +100,7 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-white">
+                      <Link href="/" className="block font-semibold text-gray-800">
                         Our Service
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -121,7 +121,7 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-white">
+                      <Link href="/" className="block font-semibold text-gray-800">
                         Who can join us
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -142,7 +142,7 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-white">
+                      <Link href="/" className="block font-semibold text-gray-800">
                         Interactive Blogs
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -163,7 +163,7 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-white">
+                      <Link href="/" className="block font-semibold text-gray-800">
                         Contact Us
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -182,7 +182,7 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-white">
+                      <Link href="/" className="block font-semibold text-gray-800">
                         Our Team
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -196,13 +196,13 @@ function Navbar() {
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-white">
                   <a
                     href="#"
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-white hover:bg-gray-100"
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
                   >
                     Login
                   </a>
                   <a
                     href="#"
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-white hover:bg-gray-100"
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
                   >
                     Logout
                   </a>
@@ -278,8 +278,8 @@ function Navbar() {
             className={`${
               !toggle
                 ? "dark:bg-tertiary"
-                : "bg-white-100 min-h-screen text-gray-900"
-            } flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6   lg:ring-1 lg:ring-gray-900/10 top-0 h-10`}
+                : "bg-white-100 dark:bg-black min-h-screen text-gray-900 dark:text-white"
+            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10`}
           >
             <div className="flex items-center justify-between ">
               <div className="flex cursor-pointer">
@@ -353,49 +353,49 @@ function Navbar() {
                   >
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our Service
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Who can join us
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Interactive Blogs
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our videos
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Research
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Contact us
                     </Link>
 
                     <Link
                       href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50"
+                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our Team
                     </Link>
@@ -403,19 +403,19 @@ function Navbar() {
                 </div>
                 <Link
                   href="/blogs"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Blogs
                 </Link>
                 <Link
                   href="/assesment"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Assesments
                 </Link>
                 <Link
                   href="/video"
-                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Video
                 </Link>
@@ -423,7 +423,7 @@ function Navbar() {
               <div className="py-6">
                 <Link
                   href="#"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100"
+                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100 dark:hover:bg-darktertiary"
                 >
                   Log in
                 </Link>
