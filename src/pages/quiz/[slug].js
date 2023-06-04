@@ -51,25 +51,23 @@ const Quiz = ({ quiz }) => {
           perfect: quiz.perfectFeedback,
         };
 
-        const percentage = Math.floor(
-          (newScore / (quiz.quizzes.length)) * 100
-        ); // Getting percentage of the score
+        const percentage = Math.floor((newScore / quiz.quizzes.length) * 100); // Getting percentage of the score
         if (percentage <= 25) {
           setFeedback(`${feedbackValues.poor}`);
           setuserPercentage(percentage);
-          setcolor("red")
+          setcolor("red");
         } else if (percentage <= 50) {
           setFeedback(`${feedbackValues.good}`);
           setuserPercentage(percentage);
-          setcolor("yellow")
+          setcolor("yellow");
         } else if (percentage <= 75) {
           setFeedback(`${feedbackValues.excellent}`);
           setuserPercentage(percentage);
-          setcolor("blue")
+          setcolor("blue");
         } else {
           setFeedback(`${feedbackValues.perfect}`);
           setuserPercentage(percentage);
-          setcolor("green")
+          setcolor("green");
         }
       }
     }
@@ -120,7 +118,6 @@ const Quiz = ({ quiz }) => {
                   </button>
                 )
               )}
-              
             </div>
             <div className="flex w-full ">
               <button
@@ -136,22 +133,35 @@ const Quiz = ({ quiz }) => {
 
       {isSubmitted && (
         <div className="flex flex-col justify-center items-center gap-14">
-          <h2 className="text-5xl font-semibold">Result</h2>
           <div>
-            <Progress
+            {/* <Progress
               score={score}
               userPercentage={userPercentage}
               feedback={feedback}
               totalQuestion = {quiz.quizzes.length}
               color = {color}
-            />
+            /> */}
+            <div className="font-montserrat">
+              <p className="">
+                <span className="text-2xl font-semibold"> Your Score </span>:{" "}
+                <span className="text-xl">{score}</span>
+              </p>
+              <p className="">
+                <span className="text-2xl font-semibold">Your Percentage</span>{" "}
+                : <span className="text-xl">{userPercentage}%</span>
+              </p>
+              <p className="py-4">You answered {score} out of {quiz.quizzes.length} questions correctly.</p>
+            </div>
           </div>
           <div className="flex flex-col justify-center items-center my-5 max-w-xs bg-yellow-200 p-10 md:max-w-3xl font-poppins ">
             <h3 className="text-2xl my-6 font-semibold text-tertiary ">
               Expert FeedBack
             </h3>
             <p className="text-start max-w- md:text-start ">{feedback}</p>
+          
           </div>
+         
+         
           <div className="flex flex-col justify-center items-center ">
             <h3 className="text-2xl my-1">Resources</h3>
             <div>Blogs</div>

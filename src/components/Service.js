@@ -92,4 +92,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default SectionWrapper(Services,"service");

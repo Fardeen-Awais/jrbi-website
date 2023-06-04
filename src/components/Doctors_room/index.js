@@ -9,8 +9,8 @@ import { useThree } from "@react-three/fiber";
 const RoomMesh = () => {
   const brain = useLoader(GLTFLoader, "./lowpoly_medical_room/scene.gltf");
   const {viewport} = useThree();
-  const scale = viewport.width < 768 ? 0.5 : 1; 
-  const positionY = viewport.width < 768 ? -20 : -150; 
+  const scale = viewport.width < 768 ? 0.6 : 1; 
+  const positionY = viewport.width < 768 ? -70 : -150; 
   const positionZ = viewport.width < 768 ? -410 : -210; 
   return (
     <mesh>

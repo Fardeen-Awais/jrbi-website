@@ -5,11 +5,15 @@ import { styles } from "@/styles/styles";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
 import { useEffect } from "react";
-import { useSession, useUser , useSupabaseClient} from '@supabase/auth-helpers-react'
+import {
+  useSession,
+  useUser,
+  useSupabaseClient,
+} from "@supabase/auth-helpers-react";
 function Navbar() {
-  const session = useSession()
-  const user = useUser()
-  const supabase = useSupabaseClient()
+  const session = useSession();
+  const user = useUser();
+  const supabase = useSupabaseClient();
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -100,7 +104,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-gray-800">
+                      <Link
+                        href="/"
+                        className="block font-semibold text-gray-800"
+                      >
                         Our Service
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -121,7 +128,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-gray-800">
+                      <Link
+                        href="/"
+                        className="block font-semibold text-gray-800"
+                      >
                         Who can join us
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -142,7 +152,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-gray-800">
+                      <Link
+                        href="/"
+                        className="block font-semibold text-gray-800"
+                      >
                         Interactive Blogs
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -163,7 +176,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-gray-800">
+                      <Link
+                        href="/"
+                        className="block font-semibold text-gray-800"
+                      >
                         Contact Us
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -182,7 +198,10 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link href="/" className="block font-semibold text-gray-800">
+                      <Link
+                        href="/"
+                        className="block font-semibold text-gray-800"
+                      >
                         Our Team
                         <span className="absolute inset-0"></span>
                       </Link>
@@ -251,24 +270,31 @@ function Navbar() {
               </button>
             </div>
             {!session ? (
-        <Link href="/login" className="text-sm font-semibold leading-6">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="38"
-            viewBox="0 96 960 960"
-            width="38"
-          >
-            <path
-              d="M489 936v-60h291V276H489v-60h291q24 0 42 18t18 42v600q0 24-18 42t-42 18H489Zm-78-185-43-43 102-102H120v-60h348L366 444l43-43 176 176-174 174Z"
-              fill={theme === "light" ? "black" : "white"}
-            />
-          </svg>
-        </Link>
-      ):(
-        <div className="profile">
-          <img onClick={() => supabase.auth.signOut()} title="Click here to logout"  src={user.user_metadata.avatar_url} className="w-10 h-10 rounded-full" id="avatar"  alt="User Avatar" />
-        </div>
-      ) }
+              <Link href="/login" className="text-sm font-semibold leading-6">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="38"
+                  viewBox="0 96 960 960"
+                  width="38"
+                >
+                  <path
+                    d="M489 936v-60h291V276H489v-60h291q24 0 42 18t18 42v600q0 24-18 42t-42 18H489Zm-78-185-43-43 102-102H120v-60h348L366 444l43-43 176 176-174 174Z"
+                    fill={theme === "light" ? "black" : "white"}
+                  />
+                </svg>
+              </Link>
+            ) : (
+              <div className="profile">
+                <img
+                  onClick={() => supabase.auth.signOut()}
+                  title="Click here to logout"
+                  src={user.user_metadata.avatar_url}
+                  className="w-10 h-10 rounded-full"
+                  id="avatar"
+                  alt="User Avatar"
+                />
+              </div>
+            )}
           </div>
         </nav>
 
@@ -421,19 +447,21 @@ function Navbar() {
                 </Link>
               </div>
               <div className="py-6">
-              {!session ? (<Link
-                  href="/login"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100 dark:hover:bg-darktertiary"
-                >
-                  Log in
-                </Link>)
-                :(
+                {!session ? (
+                  <Link
+                    href="/login"
+                    className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-medium leading-7  hover:bg-white-100 dark:hover:bg-darktertiary"
+                  >
+                    Log in
+                  </Link>
+                ) : (
                   <div>
-                <p>Hi {user.user_metadata.full_name}</p>
-                <p className="text-center py-2 font-semibold cursor-pointer">Logout</p>
-                </div>
+                    <p>Hi {user.user_metadata.full_name}</p>
+                    <p className="text-center py-2 font-semibold cursor-pointer">
+                      Logout
+                    </p>
+                  </div>
                 )}
-                
               </div>
               <div className="flex items-center justify-end flex-col-reverse gap-x-4">
                 <button

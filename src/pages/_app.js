@@ -8,7 +8,7 @@ import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 
 const anton = Anton({
-  subsets: ["vietnamese"],
+  subsets: ["latin-ext"],
   variable: "--font-anton",
   weight: ["400"],
 });
@@ -26,14 +26,13 @@ export default function App({ Component, pageProps }) {
   const [supabase] = useState(() => createBrowserSupabaseClient());
   return (
     <main
-      className={`${anton.variable} ${poppins.variable} ${montserrat.variable} bg-white text-black-100 dark:bg-gray-900 dark:text-white overflow-hidden`}
+      className={`${anton.variable} ${poppins.variable} ${montserrat.variable} bg-white text-black-100 dark:bg-gray-900 dark:text-white overflow-hidden `}
     >
-  
       <SessionContextProvider
         supabaseClient={supabase}
         initialSession={pageProps.initialSession}
       >
-            <Navbar />
+        <Navbar />
         <Component {...pageProps} />
       </SessionContextProvider>
     </main>
