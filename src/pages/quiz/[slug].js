@@ -113,7 +113,7 @@ const Quiz = ({ quiz }) => {
                     className={`rounded-md mx-3 md:mx-2 py-4 text-sm font-poppins outline outline-1 outline-gray-400 my-3 w-72 overflow-hidden  ${
                       userAnswers[currentQuestionIndex] === index
                         ? "bg-gradient-to-r from-green-300  to-green-400"
-                        : "bg-white "
+                        : "bg-white dark:text-gray-900"
                     }`}
                   >
                     {option.option}
