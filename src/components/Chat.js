@@ -23,7 +23,7 @@ function Chat() {
             <p>
               The main researcher who is involved in this research intervention
               plan is also a registered & licensed counsellor. Click on the
-              'Connect With Us' button below to get your queries answered or to
+              Connect With Us button below to get your queries answered or to
               book a session with the counselor
             </p>
             <Link href="/chat">
