@@ -7,9 +7,9 @@ function Assesment({ asses }) {
   return (
     <div className="min-h-screen py-10 mx-auto ">
       <div className="flex flex-col justify-center items-center my-10 ">
-        <h2 className=" border-2 border-gray-600 p-2 ">Assesment Quiz</h2>
-        <p className="p-4 max-w-lg text-lg">
-          Enjoy quizzez make by Psychologist experts
+        <h2 className=" border-2 border-gray-600 p-2 ">Assessments</h2>
+        <p className="p-4 max-w-sm md:max-w-lg text-lg">
+        Please follow the instructions from the researcher of this study before taking the assessments
         </p>
       </div>
       <motion.div

@@ -53,8 +53,8 @@ function Navbar() {
         >
           <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
             <Link href={"/"}>
-              <h3 className="font-anton text-4xl flex justify-center items-center py-3 cursor-pointer ">
-                Jr.
+              <h3 className="font-poppins text-xl flex justify-center items-center p-3 cursor-pointer ">
+              RBI-healthspace
               </h3>
             </Link>
           </motion.div>
@@ -132,11 +132,11 @@ function Navbar() {
                         href="/"
                         className="block font-semibold text-gray-800"
                       >
-                        Who can join us
+                        Who Can Join Us
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                        {`Let's see who can join our organization! We welcome individuals from diverse`}
+                        {`Anyone who wants to make a healthy change in their lives`}
                       </p>
                     </div>
                   </div>
@@ -156,11 +156,11 @@ function Navbar() {
                         href="/"
                         className="block font-semibold text-gray-800"
                       >
-                        Interactive Blogs
+                        Explore some article
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                        Explore some article on previous reseaches
+                      Explore research-supported resources to help you with your intervention plan
                       </p>
                     </div>
                   </div>
@@ -180,10 +180,10 @@ function Navbar() {
                         href="/"
                         className="block font-semibold text-gray-800"
                       >
-                        Contact Us
+                        Get in touch with us
                         <span className="absolute inset-0"></span>
                       </Link>
-                      <p className="mt-1 text-gray-800">Get in touch with us</p>
+                      <p className="mt-1 text-gray-800">Get in touch with us with any queries regarding this research intervention</p>
                     </div>
                   </div>
                   <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-white-100">
@@ -202,12 +202,11 @@ function Navbar() {
                         href="/"
                         className="block font-semibold text-gray-800"
                       >
-                        Our Team
+                        Meet our talented
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                        Meet our talented and dedicated team who are passionate
-                        about research
+                      Meet the researchers behind this research intervention
                       </p>
                     </div>
                   </div>
@@ -256,7 +255,7 @@ function Navbar() {
               } flex cursor-pointer items-center gap-x-1 text-sm font-medium leading-6 `}
               onClick={() => handleLinkClick("Esports")}
             >
-              video
+              Video
             </Link>
           </div>
           <div className="hidden lg:flex justify-center items-center">
@@ -307,11 +306,11 @@ function Navbar() {
                 : "bg-white-100 dark:bg-black min-h-screen text-gray-900 dark:text-white"
             } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 py-1`}
           >
-            <div className="flex items-center justify-between ">
+            <div className="flex items-center justify-between py-2">
               <div className="flex cursor-pointer">
                 <Link href={"/"}>
-                  <h3 className="font-anton text-3xl flex justify-center items-center ">
-                    Jrbi
+                  <h3 className="font-poppins text-xl flex justify-center items-center ">
+                  RBI-healthspace
                   </h3>
                 </Link>
               </div>
@@ -388,21 +387,21 @@ function Navbar() {
                       href="#"
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
-                      Who can join us
+                      Who Can Join Us
                     </Link>
 
                     <Link
                       href="#"
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
-                      Interactive Blogs
+                      Explore some article
                     </Link>
 
                     <Link
                       href="#"
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
-                      Our videos
+                      Our Videos
                     </Link>
 
                     <Link

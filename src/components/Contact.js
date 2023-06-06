@@ -109,10 +109,10 @@ function Contact() {
                
              
                 <label
-                  className="text-sm leading-6 text-gray-500"
+                  className="text-sm max-w-xs leading-6 text-gray-500"
                   id="switch-1-label"
                 >
-              By submitting the form you will allow us to use the Email
+              By submitting this form, you grant permission to the researchers to collect, store, and analyze your personal information, ensuring confidentiality and privacy
                 </label>
               </div>
             </div>

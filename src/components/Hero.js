@@ -16,7 +16,7 @@ function Hero() {
         />
         <h1
           className={`${styles.heroHeadText} max-w-2xl `}
-        >{`Make the Health better will make us better`}</h1>
+        >{`Ignite your health journey by mastering self-efficacy skills for confident decision-making`}</h1>
         <motion.div />
       </div>
       <Room />

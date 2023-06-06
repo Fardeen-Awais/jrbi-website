@@ -6,8 +6,8 @@ function Video({ youtube }) {
     <>
       <div className="min-h-screen py-10 max-w-6xl mx-auto p-3">
         <div className="flex flex-col justify-center items-center my-10 ">
-          <h2 className=" border-2 border-gray-600 p-2 ">Our Videos</h2>
-          <p className="py-4 text-xl">Lets see some videos 📽</p>
+          <h2 className=" border-2 border-gray-600 p-2 ">Video Resources</h2>
+          <p className="py-4 text-xl">Make the most use of our video resources for your intervention journey</p>
         </div>
         <motion.div
           variants={fadeIn("right", "spring", 0.8, 0.5)}
