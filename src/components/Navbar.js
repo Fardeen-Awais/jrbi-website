@@ -110,7 +110,8 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <Link
-                        href="/"
+                        onClick={() => setToggle(!toggle)}
+                        href="/#service"
                         className="block font-semibold text-gray-800"
                       >
                         Our Service
@@ -134,7 +135,8 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <Link
-                        href="/"
+                       onClick={() => setToggle(!toggle)}
+                        href="/joinus"
                         className="block font-semibold text-gray-800"
                       >
                         Who Can Join Us
@@ -158,7 +160,8 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <Link
-                        href="/"
+                        href="/blogs"
+                        onClick={() => setToggle(!toggle)}
                         className="block font-semibold text-gray-800"
                       >
                         Explore some article
@@ -182,17 +185,17 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link
-                        href="/"
-                        className="block font-semibold text-gray-800"
-                      >
-                        Get in touch with us
-                        <span className="absolute inset-0"></span>
+                      <Link  onClick={() => setToggle(!toggle)} href="/#chat" className="block text-gray-800">
+                        <span className="font-semibold ">
+                          {" "}
+                          Get in touch with us
+                        </span>
+
+                        <p className="mt-1 text-gray-800">
+                          Get in touch with us with any queries regarding this
+                          research intervention
+                        </p>
                       </Link>
-                      <p className="mt-1 text-gray-800">
-                        Get in touch with us with any queries regarding this
-                        research intervention
-                      </p>
                     </div>
                   </div>
                   <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-white-100">
@@ -208,7 +211,8 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <Link
-                        href="/"
+                        href="/team"
+                        onClick={() => setToggle(!toggle)}
                         className="block font-semibold text-gray-800"
                       >
                         Meet our talented
@@ -221,18 +225,29 @@ function Navbar() {
                   </div>
                 </div>
                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-white">
-                  <a
+                  {!session ? (
+                    <Link
+                      href="/login"
+                      onClick={() => setToggle(!toggle)}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
+                    >
+                      {" "}
+                      Login
+                    </Link>
+                  ) : (
+                    <div
                     href="#"
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium leading-6 text-gray-700 hover:bg-gray-100"
                   >
-                    Login
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
+                    Hi<span className="text-sm">{user.user_metadata.full_name}</span> 
+                  </div>
+                  )}
+                  <div
+                    onClick={() => supabase.auth.signOut()}
+                    className="flex items-center cursor-pointer justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-100"
                   >
                     Logout
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -296,6 +311,7 @@ function Navbar() {
                 <Image
                   onClick={() => supabase.auth.signOut()}
                   width={400}
+                  height={400}
                   title="Click here to logout"
                   src={user.user_metadata.avatar_url}
                   className="w-10 h-10 rounded-full"
@@ -391,49 +407,48 @@ function Navbar() {
                     className={`${!dropdown ? "hidden" : "flex flex-col"} `}
                   >
                     <Link
-                      href="#"
+                      href="/#service"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our Service
                     </Link>
 
                     <Link
-                      href="#"
+                      href="/joinus"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Who Can Join Us
                     </Link>
 
                     <Link
-                      href="#"
+                      href="/blogs"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Explore some article
                     </Link>
 
                     <Link
-                      href="#"
+                      href="/video"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our Videos
                     </Link>
 
                     <Link
-                      href="#"
-                      className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
-                    >
-                      Research
-                    </Link>
-
-                    <Link
-                      href="#"
+                      href="/#chat"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Contact us
                     </Link>
 
                     <Link
-                      href="#"
+                      href="/team"
+                      onClick={() => setToggle(!toggle)}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-500"
                     >
                       Our Team
@@ -442,18 +457,21 @@ function Navbar() {
                 </div>
                 <Link
                   href="/blogs"
+                  onClick={() => setToggle(!toggle)}
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Blogs
                 </Link>
                 <Link
                   href="/assesment"
+                  onClick={() => setToggle(!toggle)}
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Assesments
                 </Link>
                 <Link
                   href="/video"
+                  onClick={() => setToggle(!toggle)}
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-medium leading-7  hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Video
