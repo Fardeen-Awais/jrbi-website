@@ -55,8 +55,8 @@ function Navbar() {
           <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
             <Link href={"/"}>
               <Image
-                className="h-16 w-16 "
-                src="/logo.jpg"
+                className="h-12 w-12 "
+                src="/logo.png"
                 width={400}
                 height={400}
                 alt="logo"
@@ -135,7 +135,7 @@ function Navbar() {
                     </div>
                     <div className="flex-auto">
                       <Link
-                       onClick={() => setToggle(!toggle)}
+                        onClick={() => setToggle(!toggle)}
                         href="/joinus"
                         className="block font-semibold text-gray-800"
                       >
@@ -185,7 +185,11 @@ function Navbar() {
                       </svg>
                     </div>
                     <div className="flex-auto">
-                      <Link  onClick={() => setToggle(!toggle)} href="/#chat" className="block text-gray-800">
+                      <Link
+                        onClick={() => setToggle(!toggle)}
+                        href="/#chat"
+                        className="block text-gray-800"
+                      >
                         <span className="font-semibold ">
                           {" "}
                           Get in touch with us
@@ -236,11 +240,14 @@ function Navbar() {
                     </Link>
                   ) : (
                     <div
-                    href="#"
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium leading-6 text-gray-700 hover:bg-gray-100"
-                  >
-                    Hi<span className="text-sm">{user.user_metadata.full_name}</span> 
-                  </div>
+                      href="#"
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium leading-6 text-gray-700 hover:bg-gray-100"
+                    >
+                      Hi
+                      <span className="text-sm">
+                        {user.user_metadata.full_name}
+                      </span>
+                    </div>
                   )}
                   <div
                     onClick={() => supabase.auth.signOut()}
