@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { styles } from "@/styles/styles";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
 import { useEffect } from "react";
@@ -46,16 +47,20 @@ function Navbar() {
 
   return (
     <>
-      <header className="font-poppins relative top-0 p-5 lg:p-3 bg-white-100 dark:bg-black-100">
+      <header className="font-poppins relative top-0 p-5 lg:p-3 bg-white dark:bg-black-100">
         <nav
           className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex `}
           aria-label="Global"
         >
           <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
             <Link href={"/"}>
-              <h3 className="font-poppins text-xl flex justify-center items-center p-3 cursor-pointer ">
-              RBI-healthspace
-              </h3>
+              <Image
+                className="h-16 w-16 "
+                src="/logo.jpg"
+                width={400}
+                height={400}
+                alt="logo"
+              ></Image>
             </Link>
           </motion.div>
           {/* Options for product   */}
@@ -160,7 +165,8 @@ function Navbar() {
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                      Explore research-supported resources to help you with your intervention plan
+                        Explore research-supported resources to help you with
+                        your intervention plan
                       </p>
                     </div>
                   </div>
@@ -183,7 +189,10 @@ function Navbar() {
                         Get in touch with us
                         <span className="absolute inset-0"></span>
                       </Link>
-                      <p className="mt-1 text-gray-800">Get in touch with us with any queries regarding this research intervention</p>
+                      <p className="mt-1 text-gray-800">
+                        Get in touch with us with any queries regarding this
+                        research intervention
+                      </p>
                     </div>
                   </div>
                   <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-white-100">
@@ -206,7 +215,7 @@ function Navbar() {
                         <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
-                      Meet the researchers behind this research intervention
+                        Meet the researchers behind this research intervention
                       </p>
                     </div>
                   </div>
@@ -284,8 +293,9 @@ function Navbar() {
               </Link>
             ) : (
               <div className="profile">
-                <img
+                <Image
                   onClick={() => supabase.auth.signOut()}
+                  width={400}
                   title="Click here to logout"
                   src={user.user_metadata.avatar_url}
                   className="w-10 h-10 rounded-full"
@@ -303,15 +313,19 @@ function Navbar() {
             className={`${
               !toggle
                 ? "dark:bg-tertiary"
-                : "bg-white-100 dark:bg-black min-h-screen text-gray-900 dark:text-white"
-            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 py-1`}
+                : "bg-white dark:bg-black min-h-screen text-gray-900 dark:text-white"
+            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 py-1 `}
           >
-            <div className="flex items-center justify-between py-2">
+            <div className="flex items-center justify-between ">
               <div className="flex cursor-pointer">
                 <Link href={"/"}>
-                  <h3 className="font-poppins text-xl flex justify-center items-center ">
-                  RBI-healthspace
-                  </h3>
+                  <Image
+                    className="h-10 w-10"
+                    src="/logo.jpg"
+                    width={400}
+                    height={400}
+                    alt="logo"
+                  ></Image>
                 </Link>
               </div>
               <button

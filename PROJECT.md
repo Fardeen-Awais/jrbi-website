@@ -43,7 +43,7 @@
   - It includes manage clients data and login details.
   - Clients information about each question.
   - Statistics report about each question that public answered
-- Ai Chat bot assistant - []
+- Ai Chat bot assistant - [x]
   - Help you to assist your problem
   - Suggested you some solutions
 
