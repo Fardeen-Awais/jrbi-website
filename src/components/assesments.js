@@ -2,18 +2,21 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motion";
+import { fadeAnimation } from "@/utils/motion";
 function Assesment({ asses }) {
   return (
     <div className="min-h-screen py-10 mx-auto ">
       <div className="flex flex-col justify-center items-center my-10 ">
         <h2 className=" border-2 border-gray-600 p-2 ">Assessments</h2>
-        <p className="p-4 max-w-sm md:max-w-lg text-lg">
-        Please follow the instructions from the researcher of this study before taking the assessments
+        <p className="p-4 max-w-sm text-gray-700 dark:text-gray-300 text-md text-center">
+          Please follow the instructions from the researcher of this study
         </p>
       </div>
       <motion.div
-        variants={fadeIn("right", "spring", 0.8, 0.5)}
+        variants={fadeAnimation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10 "
       >
         {asses.map((assessment) => (

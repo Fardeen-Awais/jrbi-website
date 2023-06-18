@@ -4,7 +4,7 @@ import Link from "next/link";
 import { styles } from "@/styles/styles";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/motion";
+import { fadeAnimation } from "@/utils/motion";
 import { useEffect } from "react";
 import {
   useSession,
@@ -52,7 +52,10 @@ function Navbar() {
           className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex `}
           aria-label="Global"
         >
-          <motion.div variants={fadeIn("up", "spring", 3, 5)} className="flex">
+          <motion.div variants={fadeAnimation}
+      initial="initial"
+      animate="animate"
+      exit="exit" className="flex">
             <Link href={"/"}>
               <Image
                 className="h-12 w-12 "

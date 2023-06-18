@@ -18,6 +18,7 @@ function Hero() {
           className={`${styles.heroHeadText} max-w-2xl `}
         >{`Ignite your health journey by mastering self-efficacy skills for confident decision-making`}</h1>
         <motion.div />
+        
       </div>
       <Room />
 

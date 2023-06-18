@@ -6,12 +6,9 @@ import Contact from "@/components/Contact";
 import { createClient } from "@sanity/client";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
-import { Trusted } from "@/components/Trusted";
-import Subscribe from "@/components/Subscribe";
-import Ourteam from "@/components/Ourteam";
 import Chat from "@/components/Chat";
 
-export default function Home({ posts, youtube, asses }) {
+export default function Home({ posts, youtube, asses , author }) {
   const firstThreePosts = posts.slice(0, 3);
   const firstThreeVideo = youtube.slice(0, 3);
   return (
