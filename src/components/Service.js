@@ -5,56 +5,56 @@ const services = [
   {
     id: 1,
     title: "Alcohol Use",
-    src: `/icons/ServicesIcon/individual_icon.svg`,
+    src: `/icons/ServicesIcon/Alcohol.svg`,
     description:
       "Looking to manage your drinking behavior? Sign up and be part of our research participants to have first hand access to our intervention plan",
   },
   {
     id: 2,
     title: "Smoking & Vaping",
-    src: `/icons/ServicesIcon/relationship_icon.svg`,
+    src: `/icons/ServicesIcon/smoke_free.svg`,
     description:
       "Tried quitting but find yourself falling back into the loop? Find yourself swapping between conventional cigs and e-cigs? Commit to our intervention plan for a novel approach to help you make effective decisions in quitting smoking",
   },
   {
     id: 3,
     title: "Illicit Drug Use",
-    src: `/icons/ServicesIcon/house.svg`,
+    src: `/icons/ServicesIcon/drugs.svg`,
     description:
       "Find yourself using drugs, whether prescribed or non-prescribed in an illicit manner? Sign up for our self-efficacy intervention program to assist you in managing your presenting issues in a more effective manner",
   },
   {
     id: 4,
     title: "Driving Behavior",
-    src: `/icons/ServicesIcon/family_restroom.svg`,
+    src: `/icons/ServicesIcon/driving.svg`,
     description:
       "Have you been in a car driven by a reckless driver? Got yourself a demerit for poor driving behavior? Or have you got your license suspended because of your driving behaviour? Learn how you can improve your driving behavior by being part of our research intervention",
   },
   {
     id: 5,
     title: "Risky Sexual Behavior",
-    src:"/icons/ServicesIcon/smoke_free.svg",
+    src:"/icons/ServicesIcon/love.svg",
     description:
       "Do you know anyone who has limited knowledge of good practices of sexual behaviour? Join our intervention program to learn how you can avoid sexual health hazards by learning how to make effective decisions independently",
   },
   {
     id: 6,
     title: "Gambling",
-    src:"/icons/ServicesIcon/sentiment_sad.svg",
+    src:"/icons/ServicesIcon/casino.svg",
     description:
       "Find yourself in a financial burden because of spending too much virtual tokens on an online game? Did you realize that the aforementioned scenario is a form of gambling? Learn more on how you can avoid accidental gambling or intentional gambling with our intervention program.",
   },
   {
     id: 7,
     title: "Unhealthy Dietary Behavior",
-    src:"/icons/ServicesIcon/sex_education.svg",
+    src:"/icons/ServicesIcon/ramen_dining.svg",
     description:
       "Want to improve your eating behaviors? Our intervention programs addresses all forms of eating behaviours, from frequent fast-food eating to meal skipping behaviors.",
   },
   {
     id: 8,
     title: "IRBI Counseling",
-    src:"/icons/ServicesIcon/smoke_free.svg",
+    src:"/icons/ServicesIcon/irbi.svg",
     description:
       "In the event where you believe you need further assistance, such as counselling while working on the intervention program, this platform provides complimentary counseling for the specific intervention program that you have signed up for",
   },
@@ -76,7 +76,7 @@ const Services = () => {
             <div className="bg-white-100  p-2 h-64 shadow-md hover:shadow-sm rounded-lg overflow-hidden">
               <div className="py-4 px-4 cursor-pointer text-black ">
               {/* <div dangerouslySetInnerHTML={{ __html: service.src }}></div> */}
-              <img className="h-9" src={service.src}alt="SVG Icon" />
+              <img className="h-9" src={service.src} alt="SVG Icon" />
                 <h3 className="text-xl py-4 font-montserrat font-bold ">
                   {service.title}
                 </h3>

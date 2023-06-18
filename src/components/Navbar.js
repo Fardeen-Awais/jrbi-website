@@ -219,8 +219,8 @@ function Navbar() {
                         onClick={() => setToggle(!toggle)}
                         className="block font-semibold text-gray-800"
                       >
-                        Meet our talented
-                        <span className="absolute inset-0"></span>
+                       Researchers of This Study
+                    <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
                         Meet the researchers behind this research intervention
