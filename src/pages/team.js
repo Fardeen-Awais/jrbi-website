@@ -47,12 +47,12 @@ function Team({ author }) {
         <div className="flex flex-col gap-5 justify-center items-center">
           <h2 className="text-3xl font-bold font-montserrat">Need an Help</h2>
           <p className="text-center text-sm max-w-md md:max-w-lg">
-            Our professional can help you with any questions you have. Schdeule your appointment today
+            Our professional can help you with any questions you have. Schdeule your appointment today and have an meetup with us join our study program. Tell jolyce what should i write here lol
           </p>
         </div>
         <div className="flex">
           <button class="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
-            Book Now
+            Book Now 
           </button>
           <button class="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-900">
             About us
