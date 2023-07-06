@@ -32,7 +32,7 @@
 
 - Assessments Page and Section - [x]
 - Email service - [x]
-- UI improving - []
+- UI improving - [x]
   - Improving and remaking each component
   - Adding proper colors and fonts
   - Adding 3D model in the webpage
@@ -48,3 +48,5 @@
   - Suggested you some solutions
 
 
+
+-  After the form submited i will be able to download what i input in the form. Always allow the user who is authenticated by loign. In the pdf i also want to give his name with study purpose, consent and invitation. []

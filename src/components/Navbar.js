@@ -293,7 +293,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="hidden lg:flex justify-center items-center">
-            <div className="flex ">
+            {/* <div className="flex ">
               <button
                 type="button"
                 onClick={handleThemeSwitch}
@@ -301,7 +301,7 @@ function Navbar() {
               >
                 {theme === "dark" ? "🌞" : "🌙"}
               </button>
-            </div>
+            </div> */}
             {!session ? (
               <Link href="/login" className="text-sm font-semibold leading-6">
                 <svg
@@ -505,13 +505,13 @@ function Navbar() {
                 )}
               </div>
               <div className="flex items-center justify-end flex-col-reverse gap-x-4">
-                <button
+                {/* <button
                   type="button"
                   onClick={handleThemeSwitch}
                   className="relative gap-x-8 h-8 w-8 dark:bg-white-100 bg-black-200 p-1 rounded-full"
                 >
                   {theme === "dark" ? "🌞" : "🌙"}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
