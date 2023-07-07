@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/utils/motion";
 import {
@@ -12,29 +13,53 @@ import {
 } from "antd";
 import generatePDF from "@/components/PDFdocument";
 
-const { Option } = Select;
-const formItemLayout = {
-  labelCol: {
-    span: 6,
-  },
-  wrapperCol: {
-    span: 14,
-  },
-};
-
-const onFinish = (values) => {
-  console.log("Received values of form: ", values); //value.name give the name
-  generatePDF(values);
-  console.log('done value transfered')
-};
-
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
-
 
 
 function Joinus() {
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("formSubmitted");
+    if (storedData) {
+      const { submitted, timestamp } = JSON.parse(storedData);
+      const currentTime = new Date().getTime();
+      console.log('currentTime:'+ currentTime)
+      console.log('timestamp:'+ timestamp)
+      const twentyFourHours = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
+
+      if (submitted && currentTime - timestamp < twentyFourHours) {
+        setSubmitted(true);
+      } else {
+        localStorage.removeItem("formSubmitted");
+      }
+    }
+  }, []);
+
+  const onFinish = async (values) => {
+    console.log("Received values of form: ", values);
+    generatePDF(values);
+
+    try {
+
+      setSubmitted(true);
+
+      localStorage.setItem(
+        "formSubmitted",
+        JSON.stringify({
+          submitted: true,
+          timestamp: new Date().getTime(),
+        })
+      );
+    } catch (error) {
+      console.error(error);
+      // Handle the error
+    }
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <div className="flex flex-col min-h-screen my-5 relative  ">
       <div className="h-96 flex justify-center items-center bg-pink-200 dark:text-black">
@@ -65,9 +90,9 @@ function Joinus() {
           consectetur itaque delectus dolore aperiam eaque deserunt.
         </span>
       </div>
-      <div className="dark:text-black bg-pink-100 h-full p-10 ">
+      <div className="dark:text-black bg-pink-200 h-full p-10 ">
         
-
+  {submitted ? ( <div className="bg-pink-50 w-96 h-20 flex justify-center items-center mx-auto p-5 max-w-xs text-sm">Thanks for joining us on our study. We will contact you in 48 hours via email </div> ):(
         <Form
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 14 }}
@@ -144,6 +169,7 @@ function Joinus() {
           <p className="flex justify-center items-center text-[12px] p-4 w-full">By clicking you agree with Terms & condition</p>
           </Form.Item>
         </Form>
+        )}
       </div>
     </div>
   );

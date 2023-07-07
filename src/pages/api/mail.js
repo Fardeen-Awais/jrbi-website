@@ -19,7 +19,7 @@ export default async function sendEmail(req, res) {
       from: email,
       // joyceshan92@gmail.com
       to: 'fardeenjutt99@gmail.com',
-      subject: `A new customer ${name} message you`,
+      subject: `Feedback message by ${name} `,
       text: `Dear Jolyce,\n\nHello jolyce, A new customer message you\n\n${message}\n\nBest regards,\n${name}`
     });
 

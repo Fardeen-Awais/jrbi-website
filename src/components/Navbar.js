@@ -52,10 +52,13 @@ function Navbar() {
           className={`mx-auto max-w-6xl items-center justify-between gap-x-3 hidden lg:flex `}
           aria-label="Global"
         >
-          <motion.div variants={fadeAnimation}
-      initial="initial"
-      animate="animate"
-      exit="exit" className="flex">
+          <motion.div
+            variants={fadeAnimation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="flex"
+          >
             <Link href={"/"}>
               <Image
                 className="h-12 w-12 "
@@ -222,8 +225,8 @@ function Navbar() {
                         onClick={() => setToggle(!toggle)}
                         className="block font-semibold text-gray-800"
                       >
-                       Researchers of This Study
-                    <span className="absolute inset-0"></span>
+                        Researchers of This Study
+                        <span className="absolute inset-0"></span>
                       </Link>
                       <p className="mt-1 text-gray-800">
                         Meet the researchers behind this research intervention
@@ -340,14 +343,14 @@ function Navbar() {
               !toggle
                 ? "dark:bg-tertiary"
                 : "bg-white dark:bg-black min-h-screen text-gray-900 dark:text-white"
-            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden  px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 py-1 `}
+            } absolute flex flex-col lg:hidden right-0 z-10 w-full overflow-y-hidden px-6 lg:ring-1 lg:ring-gray-900/10 top-0 h-10 `}
           >
             <div className="flex items-center justify-between ">
               <div className="flex cursor-pointer">
                 <Link href={"/"}>
                   <Image
-                    className="h-10 w-10"
-                    src="/logo.jpg"
+                    className="h-10 w-10 p-1"
+                    src="/logo.png"
                     width={400}
                     height={400}
                     alt="logo"

@@ -7,7 +7,7 @@ import { SectionWrapper } from "@/hoc";
 import Link from "next/link";
 function Hero() {
   return (
-    <div className="flex flex-col h-screen mx-auto relative  bg-white-100 dark:bg-black-100 px-7 md:px-10  max-w-7xl">
+    <div className="flex flex-col h-screen mx-auto relative  bg-white-100 dark:bg-black-100  px-7 md:px-10  max-w-7xl">
       <div className="relative ">
         <motion.div
           initial={{ width: "50%" }}
