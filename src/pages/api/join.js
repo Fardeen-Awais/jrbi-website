@@ -19,7 +19,7 @@ export default async function join(req, res) {
       // from: process.env.EMAIL_HOLDER,
       // to: 'joyceshan92@gmail.com', // Replace with your email address
       from: email,
-      to: 'fardeenawais7676@gmail.com',
+      to: 'joyceshan92@gmail.com',
       subject: `New Join Us Form Submission by ${name}`,
       text: `A new customer name ${name} just submitted the form. His/Her email is ${email}. He/She wants to become the part of the research \n\n Here is the basic detail: \n\n Name: ${name} \n Email : ${email} \n Service: ${Service}`,
     });
