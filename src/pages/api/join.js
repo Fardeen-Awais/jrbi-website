@@ -16,13 +16,15 @@ export default async function join(req, res) {
   
   try {
     const info = await transporter.sendMail({
-      from: process.env.EMAIL_HOLDER,
-      to: 'joyceshan92@gmail.com', // Replace with your email address
+      // from: process.env.EMAIL_HOLDER,
+      // to: 'joyceshan92@gmail.com', // Replace with your email address
+      from: email,
+      to: 'fardeenawais7676@gmail.com',
       subject: `New Join Us Form Submission by ${name}`,
-      text: `A new customer name ${name} just submitted the form. Its email is ${email}. He wants to become the part of the research \n\n Here is the basic detail: \n\n Name: ${name} \n Email : ${email} \n Service: ${Service}`,
+      text: `A new customer name ${name} just submitted the form. His/Her email is ${email}. He/She wants to become the part of the research \n\n Here is the basic detail: \n\n Name: ${name} \n Email : ${email} \n Service: ${Service}`,
     });
 
-    console.log('Message sent: %s', info.messageId);
+    console.log('Message sent: successfully');
     res.status(200).json({ message: 'Form submission successful!' });
   } catch (error) {
     console.error(error);

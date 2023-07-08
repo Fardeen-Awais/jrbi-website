@@ -23,8 +23,6 @@ function Joinus() {
     if (storedData) {
       const { submitted, timestamp } = JSON.parse(storedData);
       const currentTime = new Date().getTime();
-      console.log('currentTime:'+ currentTime)
-      console.log('timestamp:'+ timestamp)
       const twentyFourHours = 48 * 60 * 60 * 1000; // 48 hours in milliseconds
 
       if (submitted && currentTime - timestamp < twentyFourHours) {
@@ -36,20 +34,32 @@ function Joinus() {
   }, []);
 
   const onFinish = async (values) => {
-    console.log("Received values of form: ", values);
     generatePDF(values);
 
     try {
 
       setSubmitted(true);
+      const response = await fetch("/api/join", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-      localStorage.setItem(
-        "formSubmitted",
-        JSON.stringify({
-          submitted: true,
-          timestamp: new Date().getTime(),
-        })
-      );
+      if (response.ok) {
+        console.log("ok response 200");
+        setSubmitted(true);
+        localStorage.setItem(
+          "formSubmitted",
+          JSON.stringify({
+            submitted: true,
+            timestamp: new Date().getTime(),
+          })
+        );
+      } else {
+        console.error("Something wrong");
+      }
     } catch (error) {
       console.error(error);
       // Handle the error

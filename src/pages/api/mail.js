@@ -23,7 +23,7 @@ export default async function sendEmail(req, res) {
       text: `Dear Jolyce,\n\nHello jolyce, A new customer message you\n\n${message}\n\nBest regards,\n${name}`
     });
 
-    console.log('Message sent: %s', info.messageId);
+    console.log('Message sent successfully');
     res.status(200).json({ message: 'Email sent successfully!' });
   } catch (error) {
     console.error(error);
