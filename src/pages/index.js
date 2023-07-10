@@ -7,7 +7,7 @@ import { createClient } from "@sanity/client";
 import Video from "@/components/Video";
 import Assesments from "@/components/assesments";
 import Chat from "@/components/Chat";
-
+import Ourteam from "@/components/Ourteam";
 export default function Home({ posts, youtube, asses , author }) {
   const firstThreePosts = posts.slice(0, 3);
   const firstThreeVideo = youtube.slice(0, 3);
@@ -24,11 +24,14 @@ export default function Home({ posts, youtube, asses , author }) {
           <div class="absolute w-[380px] -top-36 right-20 min-h-screen bg-hero-pattern bg-contain bg-no-repeat bg-right-bottom opacity-10 overflow-hidden z-0 " />
           <Hero />
           <Service />
+          <Ourteam author={author} />
           <Chat />{" "}
+          
           {/* Appointment ask question get answers get some quizzes get email and do meeting.  */}
           <Assesments asses={asses} />{" "}
           {/* Test yourself with expert maked quiz Section */}
           {/* <Trusted/> */}
+     
           <Blog posts={firstThreePosts} />
           <Video youtube={firstThreeVideo} />
           {/* <Ourteam/> */}

@@ -1,10 +1,26 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem("feedbackSubmitted");
+    if (storedData) {
+      const { submitted, timestamp } = JSON.parse(storedData);
+      const currentTime = new Date().getTime();
+      const tenDays = 48 * 60 * 60 * 1000 * 10; // 10 days
+
+      if (submitted && currentTime - timestamp < tenDays) {
+        setSubmitted(true);
+      } else {
+        localStorage.removeItem("feedbackSubmitted");
+      }
+    }
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,6 +39,13 @@ function Contact() {
       if (response.ok) {
         console.log(data.message);
         setSubmitted(true);
+        localStorage.setItem(
+          "feedbackSubmitted",
+          JSON.stringify({
+            submitted: true,
+            timestamp: new Date().getTime(),
+          })
+        );
       } else {
         console.error(data.message);
       }

@@ -3,7 +3,8 @@ import Image from "next/image";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { Disclosure } from '@headlessui/react'
-
+import Ourteam from "@/components/Ourteam";
+import Link from "next/link";
 function Team({ author }) {
   const client = createClient({
     projectId: "54m8bn61", //Project id is in the sanity.json
@@ -13,36 +14,8 @@ function Team({ author }) {
   const builder = imageUrlBuilder(client);
 
   return (
-    <main className="flex flex-col">
-      <div className="section flex justify-center items-center m-20 md:m-32">
-        <h1 className="font-montserrat text-4xl md:text-6xl font-bold text-gray-900">
-          Our Team
-        </h1>
-      </div>
-
-      <div className="ourTeam max-h-screen grid grid-cols-3 gap-y-10 px-2 md:px-10 md:mx-36 ">
-        {author.map((member) => (
-          <div
-            key={member._id}
-            className="profile flex flex-col items-center justify-center gap-5"
-          >
-            {member.authorImage && (
-              <Image
-                src={builder.image(member.authorImage).url()}
-                alt={member.title}
-                width={200}
-                height={200}
-                className="h-14 w-14 object-cover rounded-full border-[1px] border-spacing-9 border-solid border-gray-900 "
-              />
-            )}
-            <div className="flex flex-col items-center justify-center gap-1">
-              <h2 className="Name text-sm font-semibold">{member.name}</h2>
-              <p className="about text-xs">{member.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
+    <main className="flex flex-col ">
+      <Ourteam author={author}/>
       <div className="Appointment flex flex-col items-center justify-center p-5 m-10 md:m-28 gap-4">
         <div className="flex flex-col gap-5 justify-center items-center">
           <h2 className="text-3xl font-bold font-montserrat">Need an Help</h2>
@@ -51,9 +24,11 @@ function Team({ author }) {
           </p>
         </div>
         <div className="flex">
+          <Link href={'/chat'}>
           <button class="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">
             Book Now 
           </button>
+          </Link>
           <button class="h-10 px-5 m-2 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-900">
             About us
           </button>

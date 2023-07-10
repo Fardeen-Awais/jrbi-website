@@ -16,11 +16,11 @@ export default async function sendEmail(req, res) {
   // console.log(name,email,message)
   try {
     const info = await transporter.sendMail({
-      from: email,
+      from: process.env.EMAIL_HOLDER,
       // joyceshan92@gmail.com
-      to: 'fardeenjutt99@gmail.com',
+      to: 'fardeenawais7676@gmail.com',
       subject: `Feedback message by ${name} `,
-      text: `Dear Jolyce,\n\nHello jolyce, A new customer message you\n\n${message}\n\nBest regards,\n${name}`
+      text: `Dear Jolyce,\n\nHello jolyce, A email ${email} gives Feedback to you\n\n${message}\n\nBest regards,\n${name}`
     });
 
     console.log('Message sent successfully');

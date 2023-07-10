@@ -13,13 +13,13 @@ function Blog({ posts }) {
   });
   const builder = imageUrlBuilder(client);
   return (
-    <div className="min-h-screen bg-white-100 dark:bg-black-100 p-4 ">
+    <div className="min-h-screen bg-white-100 dark:bg-black-100 p-8 ">
       <div className="flex flex-col justify-center items-center my-10 ">
         <h2 className=" border-2 border-gray-600 p-2 ">Our Blogs</h2>
         <p className="py-4 text-xl">Read some research based articles</p>
       </div>
       <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10 max-w-6xl mx-auto"
+        className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-7 md:p-6 py-10 max-w-6xl mx-auto"
       >
         {posts.map((arg) => {
           return (
