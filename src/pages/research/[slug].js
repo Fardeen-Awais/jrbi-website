@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import PortableText from "react-portable-text";
-
+import Head from "next/head";
 const Post = ({ blog }) => {
   console.log({blog})
   const client = createClient({
@@ -40,6 +40,16 @@ const Post = ({ blog }) => {
 
   return (
     <>
+    <Head>
+        <title>{blog.title}</title>
+        <meta
+          name="description"
+          content={blog.metadesc}
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className=" mx-auto p-7 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl m-[80px] mt-19 ">
        
         <div className="flex flex-col">
